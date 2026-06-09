@@ -8,417 +8,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:65px}
-body{font-family:'Tajawal','Playfair Display',sans-serif;background:#0a0a0a;color:rgba(255,255,255,.85);min-height:100vh;overflow-x:hidden;direction:rtl}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{font-family:Tajawal,Playfair Display,sans-serif;background:#0a0a0a;color:rgba(255,255,255,.88);min-height:100vh;overflow-x:hidden;direction:rtl}
 img{max-width:100%;height:auto;display:block}
-.menu-wrap{max-width:500px;margin:0 auto;position:relative;overflow:hidden}
-.header{background:linear-gradient(135deg,#1a1a1a,#2a2a2a,#1a1a1a);text-align:center;padding:30px 16px 20px;border-bottom:3px solid #D4A843;position:relative}
-.header::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#D4A843,transparent,#D4A843)}
-.header .logo-ar{font-family:'Tajawal',sans-serif;font-size:38px;font-weight:900;color:#D4A843;line-height:1.2;text-shadow:0 2px 10px rgba(212,168,67,.3)}
-.header .logo-en{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:4px}
-.header .hdiv{width:50px;height:2px;background:linear-gradient(90deg,transparent,#D4A843,transparent);margin:10px auto}
-.header .h-actions{display:flex;gap:6px;justify-content:center;margin-top:14px;flex-wrap:wrap}
-.header .h-actions a{display:flex;align-items:center;gap:5px;padding:8px 16px;border-radius:25px;font-size:12px;font-weight:500;text-decoration:none;transition:.2s}
-.btn-wa{background:#25D366;color:#fff}
-.btn-call{background:#D4A843;color:#1a1a1a}
-.btn-map{background:transparent;color:#D4A843;border:1px solid #D4A843}
-.cat-nav{position:sticky;top:0;z-index:100;background:#0a0a0a;padding:6px;overflow-x:auto;display:flex;gap:4px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid #D4A843}
-.cat-nav::-webkit-scrollbar{display:none}
-.cat-tab{flex-shrink:0;padding:8px 14px;border:none;border-radius:22px;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:600;background:rgba(212,168,67,.08);color:rgba(255,255,255,.5);cursor:pointer;transition:.25s;display:flex;flex-direction:column;align-items:center;gap:2px;border:1px solid transparent}
-.cat-tab .tab-en{font-family:'Playfair Display',serif;font-size:8px;font-weight:400;letter-spacing:.5px;opacity:.5}
-.cat-tab.active,.cat-tab:active{background:rgba(212,168,67,.2);color:#D4A843;border-color:rgba(212,168,67,.3)}
-.cat-section{margin:10px;background:linear-gradient(135deg,#161616,#1e1e1e);border-radius:14px;overflow:hidden;border:1px solid rgba(212,168,67,.12)}
-.cat-header{padding:16px 14px 10px;text-align:center;background:linear-gradient(135deg,rgba(212,168,67,.06),transparent);border-bottom:1px solid rgba(212,168,67,.08)}
-.cat-header .cat-ar{font-size:28px;font-weight:900;color:#D4A843;display:block}
-.cat-header .cat-en{font-family:'Playfair Display',serif;font-size:13px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)}
-.cat-banner{height:200px;overflow:hidden;border-bottom:2px solid rgba(212,168,67,.08)}
-.cat-banner img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.cat-items{padding:8px 12px 12px}
-.mi{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(212,168,67,.06)}
-.mi:last-child{border-bottom:none}
-.mi-img{width:80px;height:80px;border-radius:12px;object-fit:cover;flex-shrink:0;border:2px solid rgba(212,168,67,.2)}
-.mi-info{flex:1;min-width:0}
-.mi-en{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:rgba(255,255,255,.9);display:block;direction:ltr;text-align:left;line-height:1.3}
-.mi-ar{font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:#D4A843;display:block;margin-top:2px}
-.mi-desc{font-size:12px;color:rgba(255,255,255,.35);margin-top:3px;display:block}
-.pr{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
-.pt{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#D4A843;background:rgba(212,168,67,.1);padding:3px 10px;border-radius:6px;direction:ltr;white-space:nowrap}
-.pt .pl{font-family:'Tajawal',sans-serif;font-size:10px;font-weight:500;color:rgba(255,255,255,.5);margin-left:3px}
-.sub-t{font-size:14px;font-weight:700;color:rgba(212,168,67,.6);padding:8px 2px 4px;border-bottom:1px dashed rgba(212,168,67,.1);margin:6px 0 2px;display:block}
-.sub-t .sub-en{font-family:'Playfair Display',serif;font-size:10px;font-weight:400;letter-spacing:1px;color:rgba(255,255,255,.25);margin-right:6px}
-.ft{background:linear-gradient(135deg,#1a1a1a,#0a0a0a);text-align:center;padding:30px 16px 24px;margin:10px;border-radius:14px;border:1px solid rgba(212,168,67,.12)}
-.ft .fl{font-size:28px;font-weight:900;color:#D4A843;font-family:'Tajawal',sans-serif}
-.ft .fle{font-family:'Playfair Display',serif;font-size:12px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4)}
-.ft .fd{width:40px;height:2px;background:linear-gradient(90deg,transparent,#D4A843,transparent);margin:8px auto}
-.ft .fa{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-.ft .fa a{padding:8px 16px;border-radius:25px;font-size:12px;text-decoration:none}
-.ft .loc{font-size:11px;opacity:.5;margin-top:12px;line-height:1.6;color:rgba(255,255,255,.5)}
-.ft .loc a{color:#D4A843;text-decoration:none}
-.ft-qr{margin-top:14px}
-.ft-qr img{width:110px;height:110px;border-radius:8px;border:2px solid rgba(212,168,67,.2)}
-.nr{display:none;text-align:center;padding:30px;color:rgba(255,255,255,.3);font-size:14px}
-@media(min-width:768px){.menu-wrap{max-width:480px;margin:0 auto}}
+.m-wrap{max-width:500px;margin:0 auto;overflow:hidden}
+.hdr{background:linear-gradient(135deg,#1a1a1a,#2a2a2a,#1a1a1a);text-align:center;padding:28px 16px 18px;position:relative}
+.hdr::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D4A843,transparent,#D4A843)}
+.hdr .l-ar{font-size:34px;font-weight:900;color:#D4A843;text-shadow:0 2px 10px rgba(212,168,67,.3)}
+.hdr .l-en{font-family:Playfair Display,serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:3px}
+.hdr .hdv{width:40px;height:2px;background:linear-gradient(90deg,transparent,#D4A843,transparent);margin:8px auto}
+.hdr .hs{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1px}
+.hdr .ha{display:flex;gap:6px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.hdr .ha a{display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:20px;font-size:11px;font-weight:500;text-decoration:none;transition:.2s}
+.bw{background:#25D366;color:#fff}
+.bc{background:#D4A843;color:#1a1a1a}
+.bm{background:transparent;color:#D4A843;border:1px solid #D4A843}
+.cnav{position:sticky;top:0;z-index:100;background:#0a0a0a;padding:5px;overflow-x:auto;display:flex;gap:4px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid #D4A843}
+.cnav::-webkit-scrollbar{display:none}
+.ctab{flex-shrink:0;padding:7px 12px;border:none;border-radius:20px;font-family:Tajawal,sans-serif;font-size:12px;font-weight:600;background:rgba(212,168,67,.08);color:rgba(255,255,255,.5);cursor:pointer;transition:.25s;border:1px solid transparent;line-height:1.2}
+.ctab .te{font-family:Playfair Display,serif;font-size:7px;opacity:.5;display:block}
+.ctab.a,.ctab:active{background:rgba(212,168,67,.2);color:#D4A843;border-color:rgba(212,168,67,.3)}
+.sec{display:none;margin:10px;background:linear-gradient(135deg,#161616,#1e1e1e);border-radius:14px;overflow:hidden;border:1px solid rgba(212,168,67,.12)}
+.sec.a{display:block;animation:fadeIn .35s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sh{background:linear-gradient(135deg,#D4A843,#b8922f);padding:14px;text-align:center}
+.sh h2{font-size:22px;font-weight:900;color:#1a1a1a;margin:0}
+.sh .she{font-family:Playfair Display,serif;font-size:11px;font-weight:600;color:rgba(26,26,26,.7);letter-spacing:2px;text-transform:uppercase}
+.it{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.04);gap:6px;min-height:44px}
+.it:last-child{border-bottom:none}
+.it .nm{flex:1}
+.it .nm .ar{font-size:14px;font-weight:600;color:#fff;line-height:1.3}
+.it .nm .en{font-family:Playfair Display,serif;font-size:10px;color:rgba(255,255,255,.45);line-height:1.2}
+.pr{font-size:13px;font-weight:700;color:#D4A843;white-space:nowrap;text-align:left;direction:ltr}
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{background:rgba(212,168,67,.15);color:#D4A843;font-weight:600;padding:7px 4px;text-align:center;font-size:10px}
+.tbl td{padding:6px 4px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);color:#fff}
+.tbl td:first-child{text-align:right;font-weight:600;font-size:13px}
+.tbl .es{font-family:Playfair Display,serif;font-size:8px;color:rgba(255,255,255,.35);display:block;font-weight:400}
+.ft{background:linear-gradient(135deg,#1a1a1a,#0a0a0a);text-align:center;padding:25px 16px;margin-top:10px;border-top:2px solid #D4A843}
+.ft .qr{width:110px;height:110px;margin:0 auto 10px;display:block}
+.ft .ql{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px}
+.ft .qs{font-size:9px;color:rgba(255,255,255,.25)}
+.ft .fdv{width:30px;height:1px;background:#D4A843;margin:8px auto}
+.sb{padding:7px 14px 3px;font-size:12px;font-weight:700;color:#D4A843;border-bottom:1px solid rgba(212,168,67,.1)}
+.sb .sbe{font-family:Playfair Display,serif;font-size:8px;font-weight:400;color:rgba(255,255,255,.35);display:block}
+.fn{padding:8px 14px;text-align:center;border-top:1px solid rgba(212,168,67,.1);font-size:10px;color:rgba(255,255,255,.4)}
 </style>
 </head>
 <body>
-<div class="menu-wrap">
-<div class="header">
-  <div class="logo-ar">ياسمين الدمام</div>
-  <div class="logo-en">Yasmeen Al Dammam</div>
-  <div class="hdiv"></div>
-  <div class="h-actions">
-    <a href="https://wa.me/966554159831" target="_blank" class="btn-wa">واتساب</a>
-    <a href="tel:0554159831" class="btn-call">اتصال</a>
-    <a href="https://maps.google.com/?q=Yasmeen+Al+Dammam" target="_blank" class="btn-map">الموقع</a>
-  </div>
+<div class="m-wrap">
+<div class="hdr">
+<div class="l-ar">مطعم ياسمين الدمام</div>
+<div class="l-en">Yasmeen Al Dammam</div>
+<div class="hdv"></div>
+<div class="hs">الدمام، المملكة العربية السعودية</div>
+<div class="ha">
+<a class="bw" href="https://wa.me/966535604862" target="_blank">💬 واتساب</a>
+<a class="bc" href="tel:+966535604862">📞 اتصال</a>
+<a class="bm" href="#">📍 الموقع</a>
 </div>
-<div style="margin:8px 10px 2px"><input id="s" placeholder="🔍 ابحث في القائمة..." oninput="f(this.value)" style="width:100%;padding:10px 14px;border:2px solid rgba(212,168,67,.15);border-radius:25px;font-family:'Tajawal',sans-serif;font-size:14px;background:#161616;outline:none;color:rgba(255,255,255,.8);direction:rtl"></div>
-<nav class="cat-nav" id="nv">
-  <button class="ct act" data-t="grill">المشويات</button>
-  <button class="ct" data-t="app">مقبلات</button>
-  <button class="ct" data-t="shawarma">الشاورما</button>
-  <button class="ct" data-t="sand">سندويش</button>
-  <button class="ct" data-t="pizza">بيتزا</button>
-  <button class="ct" data-t="feteer">فطائر</button>
-  <button class="ct" data-t="juices">عصائر</button>
-  <button class="ct" data-t="extras">إضافات</button>
+</div>
+
+<nav class="cnav" id="cnav">
+<button class="ctab a" data-c="g"><span>مشويات</span><span class="te">Grills</span></button>
+<button class="ctab" data-c="ap"><span>مقبلات</span><span class="te">Appetizers</span></button>
+<button class="ctab" data-c="sw"><span>شاورما</span><span class="te">Shawarma</span></button>
+<button class="ctab" data-c="sd"><span>سندويتشات</span><span class="te">Sandwiches</span></button>
+<button class="ctab" data-c="pz"><span>بيتزا</span><span class="te">Pizza</span></button>
+<button class="ctab" data-c="pt"><span>معجنات</span><span class="te">Pastries</span></button>
+<button class="ctab" data-c="jc"><span>عصائر</span><span class="te">Juices</span></button>
+<button class="ctab" data-c="ex"><span>إضافات</span><span class="te">Extras</span></button>
 </nav>
-<div class="nr" id="nr">😕 لا توجد نتائج</div>
-<div id="mc"></div>
-
-<div class="ft">
-  <div class="fl">ياسمين الدمام</div>
-  <div class="fle">Yasmeen Al Dammam</div>
-  <div class="fd"></div>
-  <div class="fa">
-    <a href="https://wa.me/966554159831" target="_blank" class="btn-wa">واتساب</a>
-    <a href="tel:0554159831" class="btn-call">اتصال</a>
-    <a href="https://maps.google.com/?q=Yasmeen+Al+Dammam" target="_blank" class="btn-map">الموقع</a>
-  </div>
-  <div class="ft-qr"><img src="qr_final.png" alt="QR Code" style="width:130px;height:130px;border-radius:8px;border:2px solid rgba(212,168,67,.2);margin:0 auto"></div>
-  <div class="loc">📍 الدمام – حي عبد الله فؤاد – شارع فاطمة الزهراء – مقابل كرك<br>📞 0554159831</div>
-</div></div>
-
-<script>
-var D={
-grill:{ar:"المشويات",en:"GRILLS",bn:"grills_banner.jpg",
- items:[
-  {ar:"كبة لحم (بيست)",en:"Meat Kebab",img:"kebab_meat.jpg",
-   p:[{l:"نفر",v:"30"},{l:"½ كيلو",v:"60"},{l:"كيلو",v:"120"}]},
-  {ar:"كبة دجاج",en:"Chicken Kebab",img:"kebab_chicken.jpg",
-   p:[{l:"نفر",v:"20"},{l:"½ كيلو",v:"40"},{l:"كيلو",v:"80"}]},
-  {ar:"أوصال لحم",en:"Beef Boti",img:"grill_mixed_small.jpg",
-   p:[{l:"نفر",v:"35"},{l:"½ كيلو",v:"70"},{l:"كيلو",v:"140"}]},
-  {ar:"أوصال دجاج (شيش طاووق)",en:"Shish Tawook",img:"shish_tawook.jpg",
-   p:[{l:"نفر",v:"25"},{l:"½ كيلو",v:"50"},{l:"كيلو",v:"100"}]},
-  {ar:"مشكل مشويات",en:"Mixed Grill",img:"grill_mixed_medium.jpg",
-   p:[{l:"نفر",v:"28"},{l:"½ كيلو",v:"55"},{l:"كيلو",v:"110"}]},
-  {ar:"مشكل مشويات دجاج",en:"Mixed Chicken Grill",img:"grill_mixed_medium.jpg",
-   p:[{l:"نفر",v:"33"},{l:"½ كيلو",v:"65"},{l:"كيلو",v:"130"}]},
-  {ar:"مشكل لحم",en:"Mixed Meat",img:"grill_mixed_small.jpg",
-   p:[{l:"نفر",v:"23"},{l:"½ كيلو",v:"45"},{l:"كيلو",v:"90"}]},
-  {ar:"كبة بيتي لحم",en:"Petti Meat Kebab",img:"kebab_meat.jpg",
-   p:[{l:"نفر",v:"35"},{l:"½ كيلو",v:"70"},{l:"كيلو",v:"140"}]},
-  {ar:"كبة كرز لحم",en:"Karz Meat Kebab",img:"kebab_meat.jpg",
-   p:[{l:"نفر",v:"45"},{l:"½ كيلو",v:"90"},{l:"كيلو",v:"180"}]},
-  {ar:"كبة ميرو",en:"Miro Kebab",img:"kebab_meat.jpg",
-   p:[{l:"نفر",v:"35"},{l:"½ كيلو",v:"70"},{l:"كيلو",v:"140"}]},
-  {ar:"كبة خشخاش",en:"Khaskhash Kebab",img:"kebab_meat.jpg",
-   p:[{l:"نفر",v:"35"},{l:"½ كيلو",v:"70"},{l:"كيلو",v:"140"}]},
-  {ar:"كبة أنطاكلي",en:"Antakli Kebab",img:"kebab_meat.jpg",
-   p:[{l:"نفر",v:"35"},{l:"½ كيلو",v:"70"},{l:"كيلو",v:"140"}]},
-  {ar:"إسكندر كبة لحم",en:"Iskender Meat Kebab",img:"kebab_meat.jpg",
-   p:[{l:"نفر",v:"35"},{l:"½ كيلو",v:"70"},{l:"كيلو",v:"140"}]},
-  {ar:"إسكندر كبة دجاج",en:"Iskender Chicken Kebab",img:"kebab_chicken.jpg",
-   p:[{l:"نفر",v:"25"},{l:"½ كيلو",v:"50"},{l:"كيلو",v:"100"}]},
-  {ar:"ريش غنم",en:"Lamb Chops",img:"lamb_chops.jpg",
-   p:[{l:"نفر",v:"40"},{l:"½ كيلو",v:"80"},{l:"كيلو",v:"160"}]},
-  {ar:"دجاج على الفحم (نصف)",en:"Half Grilled Chicken",img:"half_grilled_chicken.jpg",
-   p:[{l:"نصف",v:"20"}]},
-  {ar:"دجاج على الفحم (كامل)",en:"Full Grilled Chicken",img:"full_grilled_chicken.jpg",
-   p:[{l:"كامل",v:"40"}]},
-  {ar:"عرايس",en:"Arais",img:"burger_classic.jpg",
-   p:[{l:"حبة",v:"20"}]},
-  {ar:"ماريا بالجبن",en:"Maria with Cheese",img:"feteer_cheese.jpg",
-   p:[{l:"حبة",v:"25"}]},
-  {ar:"تكة البحرين (4 أسياخ)",en:"Bahrain Tikka (4 Skewers)",img:"shish_tawook.jpg",
-   p:[{l:"4 أسياخ",v:"30"}]}
- ]},
-app:{ar:"مقبلات",en:"APPETIZERS",bn:"salads_banner.jpg",
- items:[
-  {ar:"حمص",en:"Hummus",img:"salad_green.jpg",
-   p:[{l:"صغير",v:"7"},{l:"كبير",v:"10"}]},
-  {ar:"حمص بيروتي",en:"Beiruti Hummus",img:"salad_green.jpg",
-   p:[{l:"صغير",v:"7"},{l:"كبير",v:"10"}]},
-  {ar:"متبل",en:"Mutabbal",img:"salad_green.jpg",
-   p:[{l:"صغير",v:"7"},{l:"كبير",v:"10"}]},
-  {ar:"بابا غنوج",en:"Baba Ghanoush",img:"salad_green.jpg",
-   p:[{l:"صغير",v:"7"},{l:"كبير",v:"10"}]},
-  {ar:"فتوش",en:"Fattoush",img:"salad_fattoush.jpg",
-   p:[{l:"صغير",v:"7"},{l:"كبير",v:"10"}]},
-  {ar:"سلطة خضراء",en:"Green Salad",img:"salad_green.jpg",
-   p:[{l:"صغير",v:"7"},{l:"كبير",v:"10"}]},
-  {ar:"سلطة يوناني",en:"Greek Salad",img:"salad_green.jpg",
-   p:[{l:"واحد",v:"15"}]},
-  {ar:"سلطة سيزر",en:"Caesar Salad",img:"salad_green.jpg",
-   p:[{l:"واحد",v:"15"}]}
- ]},
-shawarma:{ar:"الشاورما",en:"SHAWARMA PLATTERS",bn:"shawarma_banner.jpg",
- items:[
-  {ar:"صحن شاورما عربي مقطع",en:"Arabic Cut Shawarma Plate",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج ص",v:"20"},{l:"دجاج وس",v:"25"},{l:"دجاج ك",v:"30"},{l:"لحم ص",v:"25"},{l:"لحم وس",v:"38"},{l:"لحم ك",v:"42"}]},
-  {ar:"صحن شاورما عربي فرط",en:"Arabic Slices Shawarma",img:"shawarma_meat_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج وس",v:"30"},{l:"دجاج ك",v:"35"},{l:"لحم ص",v:"30"},{l:"لحم وس",v:"45"},{l:"لحم ك",v:"60"}]},
-  {ar:"صحن شاورما عربي بروفيسيونال",en:"Arabic Professional Shawarma",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج وس",v:"30"},{l:"دجاج ك",v:"35"},{l:"لحم ص",v:"25"},{l:"لحم وس",v:"43"},{l:"لحم ك",v:"47"}]},
-  {ar:"وجبة شاورما عربي إسكندر",en:"Iskender Shawarma Meal",img:"shawarma_meat_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج وس",v:"30"},{l:"دجاج ك",v:"35"},{l:"لحم ص",v:"25"},{l:"لحم وس",v:"38"},{l:"لحم ك",v:"42"}]},
-  {ar:"صحن شاورما ياسمين الدمام",en:"Yasmeen Dammam Shawarma",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج",v:"25"},{l:"دجاج ك",v:"35"},{l:"لحم",v:"30"},{l:"لحم ك",v:"47"}]},
-  {ar:"وجبة شاورما كاساديا",en:"Shawarma Quesadilla",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج",v:"25"},{l:"دجاج ك",v:"35"},{l:"لحم",v:"30"},{l:"لحم ك",v:"47"}]},
-  {ar:"وجبة شاورما إكسترا",en:"Extra Shawarma Meal",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج ك",v:"35"}]},
-  {ar:"وجبة شاورما بانية",en":"Shawarma Bania Meal",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج ك",v:"35"}]},
-  {ar:"وجبة شاورما فرايز",en:"Shawarma Fries Meal",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج ك",v:"35"}]},
-  {ar:"وجبة شاورما فرايز بالخضار",en:"Shawarma Veggies Fries",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج ك",v:"35"}]},
-  {ar:"وجبة شاورما ديتس",en:"Shawarma Diet Meal",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج ص",v:"25"},{l:"دجاج ك",v:"35"}]},
-  {ar:"وجبة شاورما عائلية + بيبسي",en:"Family Shawarma + Pepsi",img:"shawarma_chicken_meal.jpg",
-   p:[{l:"دجاج",v:"60"},{l:"لحم",v:"70"}]},
-  // Fries sides
-  {ar:"صحن بطاطس",en:"French Fries Plate",img:"fries.jpg",
-   p:[{l:"صغير",v:"5"},{l:"وسط",v:"10"},{l:"كبير",v:"15"}]},
-  {ar:"صحن بطاطس بالجبن",en:"Cheese Fries Plate",img:"cheese_fries.jpg",
-   p:[{l:"صغير",v:"10"},{l:"وسط",v:"15"},{l:"كبير",v:"20"}]},
-  {ar:"بطاطس ويدجز",en:"Potato Wedges",img:"fries.jpg",
-   p:[{l:"صغير",v:"15"}]},
-  {ar:"بطاطس ديبرز",en:"Potato Dippers",img:"fries.jpg",
-   p:[{l:"صغير",v:"15"}]}
- ]},
-sand:{ar:"سندويشات",en:"SANDWICHES",bn:"saj_banner.jpg",
- items:[
-  // Grilled Sandwiches
-  {ar:"ساندويتش كباب لحم",en:"Meat Kebab Sandwich",img:"saj_meat.jpg",
-   p:[{l:"واحد",v:"10"}]},
-  {ar:"ساندويتش كباب دجاج",en:"Chicken Kebab Sandwich",img:"saj_chicken.jpg",
-   p:[{l:"واحد",v:"8"}]},
-  {ar:"ساندويتش أوصال لحم",en:"Beef Boti Sandwich",img:"saj_meat.jpg",
-   p:[{l:"واحد",v:"12"}]},
-  {ar:"ساندويتش شيش طاووق",en:"Shish Tawook Sandwich",img:"saj_chicken.jpg",
-   p:[{l:"واحد",v:"9"}]},
-  // Shawarma & Other Sandwiches
-  {ar:"ساندويتش صاروخ",en:"Sawrock Sandwich (Chicken/Meat)",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"11"},{l:"لحم",v:"15"}]},
-  {ar:"ساندويتش فطر",en:"Feter Sandwich (Chicken/Meat)",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"9"},{l:"لحم",v:"12"}]},
-  {ar:"ساندويتش شامي",en:"Shami Sandwich",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"7"},{l:"لحم",v:"10"}]},
-  {ar:"ساندويتش عراقي",en:"Iraqi Sandwich",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"10"},{l:"لحم",v:"12"}]},
-  {ar:"ساندويتش صامولي",en:"Samooli Sandwich",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"7"},{l:"لحم",v:"10"}]},
-  {ar:"ساندويتش إيطالي",en:"Italian Sandwich",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"9"},{l:"لحم",v:"14"}]},
-  {ar:"ساندويتش فرنسي",en:"French Sandwich",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"11"},{l:"لحم",v:"18"}]},
-  {ar:"ساندويتش مكسيكي",en:"Mexican Sandwich",img:"saj_mexican.jpg",
-   p:[{l:"دجاج",v:"15"},{l:"لحم",v:"18"}]},
-  {ar:"ساندويتش صاروخ بانية",en:"Sawrock Bania Sandwich",img:"shawarma_chicken.jpg",
-   p:[{l:"دجاج",v:"15"},{l:"لحم",v:"25"}]},
-  {ar:"ساندويتش بطاطس",en:"Potato Sandwich",img:"fries.jpg",
-   p:[{l:"دجاج",v:"5"},{l:"لحم",v:"7"}]}
- ]},
-pizza:{ar:"البيتزا",en:"PIZZA",bn:"pizza_banner.jpg",
- items:[
-  // Pizza section
-  {ar:"بيتزا خضار",en:"Vegetable Pizza",img:"pizza_vegetables.jpg",
-   p:[{l:"صغير",v:"12"},{l:"وسط",v:"18"},{l:"كبير",v:"24"}]},
-  {ar:"بيتزا مارجريتا",en:"Margherita Pizza",img:"pizza_margherita.jpg",
-   p:[{l:"صغير",v:"12"},{l:"وسط",v:"18"},{l:"كبير",v:"24"}]},
-  {ar:"بيتزا مكسيس جين",en:"Maccies Jean Pizza",img:"pizza_mexicano.jpg",
-   p:[{l:"صغير",v:"12"},{l:"وسط",v:"18"},{l:"كبير",v:"24"}]},
-  {ar:"بيتزا دجاج",en:"Chicken Pizza",img:"pizza_chicken.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"21"},{l:"كبير",v:"27"}]},
-  {ar:"بيتزا لحم",en:"Meat Pizza",img:"pizza_meat.jpg",
-   p:[{l:"صغير",v:"17"},{l:"وسط",v:"23"},{l:"كبير",v:"29"}]},
-  {ar:"بيتزا مشكل",en:"Mixed Pizza",img:"pizza_mix.jpg",
-   p:[{l:"صغير",v:"16"},{l:"وسط",v:"21"},{l:"كبير",v:"28"}]},
-  {ar:"بيتزا رنش",en:"Ranch Pizza",img:"pizza_chicken.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"20"},{l:"كبير",v:"27"}]},
-  {ar:"بيتزا باربكيو",en:"BBQ Pizza",img:"pizza_bbq.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"20"},{l:"كبير",v:"27"}]},
-  {ar:"بيتزا بيبروني",en:"Pepperoni Pizza",img:"pizza_pepperoni.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"20"},{l:"كبير",v:"27"}]},
-  {ar:"بيتزا شاورما دجاج",en:"Chicken Shawarma Pizza",img:"pizza_chicken.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"21"},{l:"كبير",v:"27"}]},
-  {ar:"بيتزا شاورما لحم",en:"Meat Shawarma Pizza",img:"pizza_meat.jpg",
-   p:[{l:"صغير",v:"17"},{l:"وسط",v:"23"},{l:"كبير",v:"29"}]},
-  {ar:"بيتزا تونة",en:"Tuna Pizza",img:"pizza_tuna.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"20"},{l:"كبير",v:"25"}]},
-  {ar:"بيتزا هواي",en:"Hawaii Pizza",img:"pizza_mix.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"20"},{l:"كبير",v:"25"}]},
-  {ar:"بيتزا فود تندير",en:"Food Tender Pizza",img:"pizza_chicken.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"20"},{l:"كبير",v:"25"}]},
-  {ar:"بيتزا تورتيلا",en:"Tortilla Pizza",img:"pizza_mexicano.jpg",
-   p:[{l:"صغير",v:"15"},{l:"وسط",v:"20"},{l:"كبير",v:"25"}]}
- ]},
-feteer:{ar:"فطائر",en:"PASTRIES",bn:"feteer_banner.jpg",
- items:[
-  {ar:"فطيرة نوتيلا",en:"Nutella Feteer",img:"feteer_nutella.jpg",p:[{l:"حبة",v:"10"}]},
-  {ar:"فطيرة فلافل",en:"Falafel Feteer",img:"feteer_tuna.jpg",p:[{l:"حبة",v:"10"}]},
-  {ar:"فطيرة بيض بالجبن",en:"Egg & Cheese Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"12"}]},
-  {ar:"فطيرة لبنة بالبيض",en:"Labneh & Egg Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"12"}]},
-  {ar:"فطيرة سبانخ",en:"Spinach Feteer",img:"feteer_honey_cheese.jpg",p:[{l:"حبة",v:"8"}]},
-  {ar:"فطيرة محمرة",en:"Mhamara Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"6"}]},
-  {ar:"فطيرة محمرة بالجبن",en:"Mhamara Cheese Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"7"}]},
-  {ar:"فطيرة بطاطس",en:"Potato Feteer",img:"feteer_honey_cheese.jpg",p:[{l:"حبة",v:"8"}]},
-  {ar:"فطيرة بطاطس بالجبن",en:"Potato Cheese Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"10"}]},
-  {ar:"فطيرة جبن سائل",en:"Melted Cheese Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"7"}]},
-  {ar:"فطيرة مكس جبن",en:"Mixed Cheese Feteer",img:"feteer_mixed_cheese.jpg",p:[{l:"حبة",v:"9"}]},
-  {ar:"فطيرة لبنة",en:"Labneh Feteer",img:"feteer_honey_cheese.jpg",p:[{l:"حبة",v:"7"}]},
-  {ar:"فطيرة لبنة بالزعتر",en:"Labneh & Zaatar Feteer",img:"feteer_honey_cheese.jpg",p:[{l:"حبة",v:"7"}]},
-  {ar:"فطيرة لبنة بالعسل",en:"Labneh & Honey Feteer",img:"feteer_honey_cheese.jpg",p:[{l:"حبة",v:"8"}]},
-  {ar:"فطيرة زعتر",en:"Zaatar Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"6"}]},
-  {ar:"فطيرة مشكل دجاج",en:"Mixed Chicken Feteer",img:"feteer_chicken.jpg",p:[{l:"حبة",v:"8"}]},
-  {ar:"فطيرة مشكل لحم",en:"Mixed Meat Feteer",img:"feteer_meat.jpg",p:[{l:"حبة",v:"10"}]},
-  {ar:"فطيرة عكاوي",en:"Akkawi Feteer",img:"feteer_cheese.jpg",p:[{l:"حبة",v:"9"}]},
-  {ar:"فطيرة عش البلبل",en:"Ashp Al Balbul Feteer",img:"feteer_honey.jpg",p:[{l:"حبة",v:"9"}]}
- ]},
-juices:{ar:"العصائر",en:"JUICES & DRINKS",bn:"juices_banner.jpg",
- items:[
-  {ar:"كوكتيل",en:"Cocktail",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"طبقات",en:"Layers Cocktail",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"24"}]},
-  {ar:"مانجو",en:"Mango",img:"juice_mango.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"فراولة",en:"Strawberry",img:"juice_strawberry.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"جوافة",en:"Guava",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"ليمون / ليمون نعناع",en:"Lemon / Lemon Mint",img:"juice_lemon_mint.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"خربز",en:"Melon",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"بطيخ",en:"Watermelon",img:"juice_watermelon.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"موز بالحليب",en:"Banana Milk",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"موز بالحليب والعسل",en:"Banana Milk & Honey",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"أناناس",en:"Pineapple",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"رمان",en:"Pomegranate",img:"juice_pomegranate.jpg",
-   p:[{l:"وسط",v:"6"},{l:"كبير",v:"8"},{l:"1L",v:"15"},{l:"1.5L",v:"22"}]},
-  {ar:"كيوي",en:"Kiwi",img:"juice_kiwi.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"24"}]},
-  {ar:"عوار القلب",en:"Awar Al Qalb",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"24"}]},
-  {ar:"أصفهاني",en:"Isfahani",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"24"}]},
-  {ar:"عصير جي",en:"G Juice",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"10"},{l:"كبير",v:"12"}]},
-  {ar:"موهيتو",en:"Mojito",img:"mojito_green.jpg",
-   p:[{l:"وسط",v:"10"},{l:"كبير",v:"12"}]},
-  {ar:"أفوكادو",en:"Avocado",img:"juice_avocado.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"24"}]},
-  {ar:"برتقال",en:"Orange",img:"juice_orange.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"24"}]},
-  {ar:"سبيشل ياسمين الدمام",en:"Yasmeen Dammam Special",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"10"},{l:"كبير",v:"12"},{l:"1L",v:"20"},{l:"1.5L",v:"25"}]},
-  {ar:"فيتامين سي",en:"Vitamin C Juice",img:"juice_orange.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"25"}]},
-  {ar:"روقان",en:"Roqan Juice",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"25"}]},
-  {ar:"عرايسي",en:"Araisi",img:"juice_lemon_mint.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"24"}]},
-  {ar:"عرايسي ملكي",en:"Royal Araisi",img:"juice_lemon_mint.jpg",
-   p:[{l:"وسط",v:"12"},{l:"كبير",v:"15"},{l:"1L",v:"18"},{l:"1.5L",v:"25"}]},
-  {ar:"سلطة فواكه (كاسة)",en:"Fruit Salad Cup",img:"salad_green.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"}]},
-  {ar:"سلطة فواكه (صحن)",en:"Fruit Salad Plate",img:"salad_green.jpg",
-   p:[{l:"كبير",v:"10"}]},
-  {ar:"ميلك شيك أوريو",en:"Milkshake Oreo",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"25"}]},
-  {ar:"ميلك شيك لوتس",en:"Milkshake Lotus",img:"juice_cocktail.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"25"}]},
-  {ar:"ميلك شيك فراولة/مانجو/جالكسي",en:"Milkshake Strawberry/Mango/Galaxy",img:"juice_strawberry.jpg",
-   p:[{l:"وسط",v:"8"},{l:"كبير",v:"10"},{l:"1L",v:"18"},{l:"1.5L",v:"25"}]}
- ]},
-extras:{ar:"إضافات",en:"EXTRAS",bn:"sides_banner.jpg",
- items:[
-  {ar:"قطعة جبن شيدر",en:"Cheddar Cheese Slice",img:"extra_cheese.jpg",p:[{l:"واحدة",v:"1"}]},
-  {ar:"جبن موزاريلا",en:"Mozzarella Cheese",img:"extra_cheese.jpg",p:[{l:"واحدة",v:"3"}]},
-  {ar:"أي علبة صوص",en:"Any Sauce",img:"garlic_sauce.jpg",p:[{l:"واحدة",v:"2"}]}
- ]}
-};
-
-// Render
-function r(it){
- let h='<div class="mi">';
- h+='<img class="mi-img" src="'+it.img+'" alt="'+it.en+'" loading="lazy" onerror="this.src=\'data:image/svg+xml,<svg xmlns=\\\'http://www.w3.org/2000/svg\\\' width=\\\'100\\\' height=\\\'100\\\'><rect fill=\\\'%23D4A84320\\\' width=\\\'100\\\' height=\\\'100\\\'/><text x=\\\'50\\\' y=\\\'55\\\' text-anchor=\\\'middle\\\' fill=\\\'%23D4A843\\\' font-size=\\\'30\\\'>🍽</text></svg>\'">';
- h+='<div class="mi-info"><span class="mi-en">'+it.en+'</span><span class="mi-ar">'+it.ar+'</span>';
- if(it.p&&it.p.length){
-  h+='<div class="pr">';
-  it.p.forEach(function(p){h+='<span class="pt"><span class="pl">'+p.l+': </span>'+p.v+' SR</span>';});
-  h+='</div>';
- }
- h+='</div></div>';
- return h;
-}
-
-var html='';
-Object.keys(D).forEach(function(k){
- var c=D[k];
- html+='<section id="'+k+'" class="cat-section">';
- html+='<div class="cat-header"><span class="cat-ar">'+c.ar+'</span><span class="cat-en">'+c.en+'</span></div>';
- html+='<div class="cat-banner"><img src="'+c.bn+'" alt="'+c.en+'" loading="lazy"></div>';
- html+='<div class="cat-items">';
- c.items.forEach(function(it){html+=r(it);});
- html+='</div></section>';
-});
-document.getElementById('mc').innerHTML=html;
-
-// Tabs
-document.addEventListener('DOMContentLoaded',function(){
-var ct=document.querySelectorAll('.ct');
-var ss=document.querySelectorAll('.cat-section');
-var nv=document.getElementById('nv');
-ct.forEach(function(t){
- t.addEventListener('click',function(){
-  var id=this.getAttribute('data-t');
-  if(!id)return;
-  ct.forEach(function(x){x.classList.remove('act')});
-  this.classList.add('act');
-  var el=document.getElementById(id);
-  if(el){var top=el.getBoundingClientRect().top+window.pageYOffset-nv.offsetHeight-10;window.scrollTo({top:top,behavior:'smooth'});}
- });
-});
-var tm=null;
-window.addEventListener('scroll',function(){
- if(tm)clearTimeout(tm);
- tm=setTimeout(function(){
-  var ft=window.pageYOffset+nv.offsetHeight+20;
-  var f=null;
-  ss.forEach(function(s){if(s.offsetTop<=ft)f=s;});
-  if(f){ct.forEach(function(t){t.classList.remove('act')});var a=document.querySelector('.ct[data-t="'+f.id+'"]');if(a)a.classList.add('act');}
- },100);
-});
-});
-
-function f(q){
- var qu=q.toLowerCase().trim();
- var items=document.querySelectorAll('.mi');
- var ss=document.querySelectorAll('.cat-section');
- var any=false;
- items.forEach(function(i){var t=i.textContent.toLowerCase();var m=!qu||t.includes(qu);i.style.display=m?'':'none';if(m)any=true});
- ss.forEach(function(s){var v=s.querySelectorAll('.mi:not([style*=\"display: none\"])').length;s.style.display=(!qu||v>0)?'':'none'});
- document.getElementById('nr').style.display=any||!qu?'none':'block';
-}
+<div class="sec a" id="g"><div class="sh"><h2>المشويات</h2><div class="she">Grills</div></div><table class="tbl"><tr><th>الصنف</th><th>فرد</th><th>نصف كيلو</th><th>كيلو</th></tr><tr><td>كباب لحم<span class="es">Kabab Lahm</span></td><td>30</td><td>60</td><td>120</td></tr><tr><td>كباب دجاج<span class="es">Kabab Dajaj</span></td><td>20</td><td>40</td><td>80</td></tr><tr><td>أوصال لحم<span class="es">Osal Lahm</span></td><td>35</td><td>70</td><td>140</td></tr><tr><td>أوصال دجاج شيش طاووق<span class="es">Osal Dajaj</span></td><td>25</td><td>50</td><td>100</td></tr><tr><td>مشكل مشويات<span class="es">Mixed Grills</span></td><td>28</td><td>55</td><td>110</td></tr><tr><td>مشكل مشويات دجاج<span class="es">Mixed Grills Chicken</span></td><td>33</td><td>65</td><td>130</td></tr><tr><td>مشكل لحم<span class="es">Mixed Meat</span></td><td>23</td><td>45</td><td>90</td></tr><tr><td>كباب بيتي لحم<span class="es">Kabab Bayti</span></td><td>35</td><td>70</td><td>140</td></tr><tr><td>كباب كرز لحم<span class="es">Kabab Karaz</span></td><td>45</td><td>90</td><td>180</td></tr><tr><td>كباب ميرو<span class="es">Kabab Miru</span></td><td>35</td><td>70</td><td>140</td></tr><tr><td>كباب خشخاش<span class="es">Kabab Khashkhash</span></td><td>35</td><td>70</td><td>140</td></tr><tr><td>اسكندر كباب لحم<span class="es">Iskandar Kabab Lahm</span></td><td>35</td><td>70</td><td>140</td></tr><tr><td>اسكندر كباب دجاج<span class="es">Iskandar Kabab Dajaj</span></td><td>25</td><td>50</td><td>100</td></tr><tr><td>ريش غنم<span class="es">Lamb Chops</span></td><td>40</td><td>80</td><td>160</td></tr><tr><td>دجاج على الفحم نصف<span class="es">Grilled Chicken Half</span></td><td>20</td><td>–</td><td>–</td></tr><tr><td>دجاج على الفحم حبة<span class="es">Grilled Chicken Full</span></td><td>40</td><td>–</td><td>–</td></tr><tr><td>عرايس<span class="es">Arayis</span></td><td>20</td><td>–</td><td>–</td></tr><tr><td>ماريا بالجبن<span class="es">Maria bil Jibn</span></td><td>25</td><td>–</td><td>–</td></tr><tr><td>تكة البحرين 4 أسياخ<span class="es">Tikkat Bahrain 4 Skewers</span></td><td>30</td><td>–</td><td>–</td></tr></table></div><div class="sec" id="ap"><div class="sh"><h2>مقبلات وسلطات</h2><div class="she">Appetizers &amp; Salads</div></div><table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>كبير</th></tr><tr><td>حمص<span class="es">Hummus</span></td><td>7</td><td>10</td></tr><tr><td>متبل<span class="es">Mutabbal</span></td><td>7</td><td>10</td></tr><tr><td>بابا غنوج<span class="es">Baba Ghanoush</span></td><td>7</td><td>10</td></tr><tr><td>فتوش<span class="es">Fattoush</span></td><td>7</td><td>10</td></tr><tr><td>سلطة خضراء<span class="es">Green Salad</span></td><td>7</td><td>10</td></tr><tr><td>سلطة يوناني<span class="es">Greek Salad</span></td><td>–</td><td>15</td></tr><tr><td>سلطة سيزر<span class="es">Caesar Salad</span></td><td>–</td><td>15</td></tr></table></div><div class="sec" id="sw"><div class="sh"><h2>أطباق الشاورما</h2><div class="she">Shawarma Platters</div></div><table class="tbl"><tr><th>الصنف</th><th>د S</th><th>د M</th><th>د L</th><th>ل S</th><th>ل M</th><th>ل L</th></tr><tr><td>صحن شاورما عربي مقطع<span class="es">Arabic Sliced</span></td><td>20</td><td>25</td><td>30</td><td>25</td><td>38</td><td>42</td></tr><tr><td>صحن شاورما عربي فرط<span class="es">Arabic Loose</span></td><td>25</td><td>30</td><td>35</td><td>30</td><td>45</td><td>60</td></tr><tr><td>وجبة شاورما اسكندر<span class="es">Iskandar Meal</span></td><td>25</td><td>30</td><td>35</td><td>25</td><td>38</td><td>42</td></tr><tr><td>شاورما ياسمين الدمام<span class="es">Yasmeen Special</span></td><td>25</td><td>–</td><td>35</td><td>30</td><td>–</td><td>47</td></tr><tr><td>وجبة كاساديا<span class="es">Quesadilla Meal</span></td><td>25</td><td>–</td><td>35</td><td>30</td><td>–</td><td>47</td></tr><tr><td>وجبة إكسترا<span class="es">Extra Meal</span></td><td>25</td><td>–</td><td>35</td><td>–</td><td>–</td><td>–</td></tr><tr><td>وجبة بانية<span class="es">Pane Meal</span></td><td>25</td><td>–</td><td>35</td><td>–</td><td>–</td><td>–</td></tr><tr><td>وجبة فرايز<span class="es">Fries Meal</span></td><td>25</td><td>–</td><td>35</td><td>–</td><td>–</td><td>–</td></tr><tr><td>وجبة فرايز بالخضار<span class="es">Fries & Veg Meal</span></td><td>25</td><td>–</td><td>35</td><td>–</td><td>–</td><td>–</td></tr><tr><td>وجبة ديتس<span class="es">Diet Meal</span></td><td>25</td><td>–</td><td>35</td><td>–</td><td>–</td><td>–</td></tr><tr><td>وجبة عائلية اقتصادية<span class="es">Family Economy</span></td><td>–</td><td>–</td><td>60</td><td>–</td><td>–</td><td>70</td></tr></table><div class="sb">🍟 البطاطس المقلية <span class="sbe">Fries &amp; Sides</span></div><table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>وسط</th><th>كبير</th></tr><tr><td>صحن بطاطس<span class="es">Fries Plate</span></td><td>5</td><td>10</td><td>15</td></tr><tr><td>صحن بطاطس بالجبن<span class="es">Cheese Fries</span></td><td>10</td><td>15</td><td>20</td></tr><tr><td>بطاطس ويدجز<span class="es">Potato Wedges</span></td><td>15</td><td>–</td><td>–</td></tr><tr><td>بطاطس ديبرز<span class="es">Potato Dippers</span></td><td>15</td><td>–</td><td>–</td></tr></table></div><div class="sec" id="sd"><div class="sh"><h2>سندويتشات</h2><div class="she">Sandwiches</div></div><div class="sb">🥩 سندويتشات مشويات <span class="sbe">Grilled Sandwiches</span></div><table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr><tr><td>ساندويتش كباب لحم<span class="es">Kabab Lahm</span></td><td>10</td></tr><tr><td>ساندويتش كباب دجاج<span class="es">Kabab Dajaj</span></td><td>8</td></tr><tr><td>ساندويتش أوصال لحم<span class="es">Osal Lahm</span></td><td>12</td></tr><tr><td>ساندويتش شيش طاووق<span class="es">Shish Tawook</span></td><td>9</td></tr></table><div class="sb">🌯 شاورما وسندويتشات <span class="sbe">Shawarma &amp; Other</span></div><table class="tbl"><tr><th>الصنف</th><th>دجاج</th><th>لحم</th></tr><tr><td>صاروخ<span class="es">Sarooh</span></td><td>11</td><td>15</td></tr><tr><td>فطر<span class="es">Mushroom</span></td><td>9</td><td>12</td></tr><tr><td>شامي<span class="es">Shami</span></td><td>7</td><td>10</td></tr><tr><td>صامولي<span class="es">Samooli</span></td><td>7</td><td>10</td></tr><tr><td>إيطالي<span class="es">Italian</span></td><td>9</td><td>14</td></tr><tr><td>فرنسي<span class="es">French</span></td><td>11</td><td>18</td></tr><tr><td>مكسيكي<span class="es">Mexican</span></td><td>15</td><td>18</td></tr><tr><td>صاروخ بانية<span class="es">Sarooh Pane</span></td><td>15</td><td>25</td></tr><tr><td>بطاطس<span class="es">Potato</span></td><td>5</td><td>7</td></tr></table></div><div class="sec" id="pz"><div class="sh"><h2>البيتزا</h2><div class="she">Pizza</div></div><table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>وسط</th><th>كبير</th></tr><tr><td>بيتزا خضار<span class="es">Veggie</span></td><td>12</td><td>18</td><td>24</td></tr><tr><td>بيتزا مارغريتا<span class="es">Margherita</span></td><td>12</td><td>18</td><td>24</td></tr><tr><td>بيتزا مكسيكان<span class="es">Mexican</span></td><td>12</td><td>18</td><td>24</td></tr><tr><td>بيتزا دجاج<span class="es">Chicken</span></td><td>15</td><td>21</td><td>27</td></tr><tr><td>بيتزا لحم<span class="es">Meat</span></td><td>17</td><td>23</td><td>29</td></tr><tr><td>بيتزا مشكل<span class="es">Mixed</span></td><td>16</td><td>21</td><td>28</td></tr><tr><td>بيتزا رنش<span class="es">Ranch</span></td><td>15</td><td>20</td><td>27</td></tr><tr><td>بيتزا باربيكيو<span class="es">BBQ</span></td><td>15</td><td>20</td><td>27</td></tr><tr><td>بيتزا بيبيروني<span class="es">Pepperoni</span></td><td>15</td><td>20</td><td>27</td></tr><tr><td>بيتزا شاورما دجاج<span class="es">Chicken Shawarma</span></td><td>15</td><td>21</td><td>27</td></tr><tr><td>بيتزا شاورما لحم<span class="es">Meat Shawarma</span></td><td>17</td><td>23</td><td>29</td></tr><tr><td>بيتزا تونة<span class="es">Tuna</span></td><td>15</td><td>20</td><td>25</td></tr><tr><td>بيتزا هواي<span class="es">Hawaiian</span></td><td>15</td><td>20</td><td>25</td></tr><tr><td>بيتزا فود تندر<span class="es">Chicken Tenders</span></td><td>15</td><td>20</td><td>25</td></tr><tr><td>بيتزا تورتيلا<span class="es">Tortilla</span></td><td>15</td><td>20</td><td>25</td></tr></table></div><div class="sec" id="pt"><div class="sh"><h2>فطائر ياسمين</h2><div class="she">Yasmeen Pastries</div></div><table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr><tr><td>فطيرة نوتيلا<span class="es">Nutella</span></td><td>10</td></tr><tr><td>فطيرة فلافل<span class="es">Falafel</span></td><td>10</td></tr><tr><td>فطيرة بيض بالجبن<span class="es">Egg & Cheese</span></td><td>12</td></tr><tr><td>فطيرة بالبنة والبيض<span class="es">Labneh & Egg</span></td><td>12</td></tr><tr><td>فطيرة سبانخ<span class="es">Spinach</span></td><td>8</td></tr><tr><td>فطيرة محمرة<span class="es">Mhamra</span></td><td>6</td></tr><tr><td>فطيرة محمرة بالجبن<span class="es">Mhamra & Cheese</span></td><td>7</td></tr><tr><td>فطيرة بطاطس<span class="es">Potato</span></td><td>8</td></tr><tr><td>فطيرة بطاطس بالجبن<span class="es">Potato & Cheese</span></td><td>10</td></tr><tr><td>فطيرة جبن سائل<span class="es">Cream Cheese</span></td><td>7</td></tr><tr><td>فطيرة مكس جبن<span class="es">Mixed Cheese</span></td><td>9</td></tr><tr><td>فطيرة لبنة<span class="es">Labneh</span></td><td>7</td></tr><tr><td>فطيرة لبنة بالزعتر<span class="es">Labneh & Zaatar</span></td><td>7</td></tr><tr><td>فطيرة لبنة بالعسل<span class="es">Labneh & Honey</span></td><td>8</td></tr><tr><td>فطيرة زعتر<span class="es">Zaatar</span></td><td>6</td></tr><tr><td>فطيرة مشكل دجاج<span class="es">Mixed Chicken</span></td><td>8</td></tr><tr><td>فطيرة مشكل لحم<span class="es">Mixed Meat</span></td><td>10</td></tr><tr><td>فطيرة عكاوي<span class="es">Akkawi</span></td><td>9</td></tr><tr><td>فطيرة عش البلبل<span class="es">Ashp Balbul</span></td><td>9</td></tr></table></div><div class="sec" id="jc"><div class="sh"><h2>عصائر ومشروبات</h2><div class="she">Fresh Juices &amp; Smoothies</div></div><table class="tbl"><tr><th>الصنف</th><th>1 لتر</th><th>1.5 لتر</th><th>كبير</th><th>وسط</th></tr><tr><td>كوكتيل<span class="es">Cocktail</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>طبقات<span class="es">Layered</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr><tr><td>مانجو<span class="es">Mango</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>فراولة<span class="es">Strawberry</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>جوافة<span class="es">Guava</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>ليمون نعناع<span class="es">Lemon Mint</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>خربز<span class="es">Melon</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>بطيخ<span class="es">Watermelon</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>موز بالحليب<span class="es">Banana Milk</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>موز حليب عسل<span class="es">Banana Honey Milk</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>أناناس<span class="es">Pineapple</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>رمان<span class="es">Pomegranate</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>كيوي<span class="es">Kiwi</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr><tr><td>عوار القلب<span class="es">Awar al-Qalb</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr><tr><td>أصفهاني<span class="es">Isfahani</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr><tr><td>عصير جي<span class="es">Juice J</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr><tr><td>موهيتو<span class="es">Mojito</span></td><td>–</td><td>–</td><td>12</td><td>10</td></tr><tr><td>أفوكادو<span class="es">Avocado</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr><tr><td>برتقال<span class="es">Orange</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr><tr><td>سبيشل ياسمين<span class="es">Yasmeen Special</span></td><td>20</td><td>25</td><td>12</td><td>10</td></tr><tr><td>فيتامين C<span class="es">Vitamin C</span></td><td>18</td><td>25</td><td>10</td><td>8</td></tr><tr><td>عصير روقان<span class="es">Rawqan</span></td><td>18</td><td>25</td><td>10</td><td>8</td></tr><tr><td>عرايسي<span class="es">Arayisi</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr><tr><td>عرايسي ملكي<span class="es">Arayisi King</span></td><td>18</td><td>25</td><td>15</td><td>12</td></tr><tr><td>سلطة فواكة كاسة<span class="es">Fruit Salad Cup</span></td><td>–</td><td>–</td><td>10</td><td>8</td></tr><tr><td>سلطة فواكة صحن<span class="es">Fruit Salad Plate</span></td><td>–</td><td>–</td><td>–</td><td>10</td></tr><tr><td>ميلك شيك أوريو لوتس<span class="es">Milkshake Oreo Lotus</span></td><td>18</td><td>25</td><td>10</td><td>8</td></tr></table></div><div class="sec" id="ex"><div class="sh"><h2>إضافات</h2><div class="she">Extras</div></div><table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr><tr><td>إضافة قطعة جبن شيدر<span class="es">Cheddar Cheese Slice</span></td><td>1</td></tr><tr><td>إضافة جبن موزاريلا<span class="es">Mozzarella Cheese</span></td><td>3</td></tr><tr><td>إضافة أي علبة صوص<span class="es">Any Sauce Pack</span></td><td>2</td></tr></table></div><div class="ft"><div class="ql">📱 قم بمسح الكود لعرض القائمة</div><img class="qr" src="data:image/png;base64,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AEBaepmQE1sW/27Yst94w5a7+d492nKc597bF32PtwIAkCYFACBNCgBAmhQAgDQpAABpUgAA0qQAAKRJAQBIkwIAkCYFACBNCgBAmhQAgDQpAABplgn5L26sip2bXVS7YctG3Oz/fM+WqzR7nLOrjLO/dbO8FQCANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEhLLxO+ty51w42rdGMBzILiidnruWX57fw4t5zRrPeeuvfuu7cCAJAmBQAgTQoAQJoUAIA0KQAAaVIAANKkAACkSQEASJMCAJAmBQAgTQoAQJoUAIA0KQAAaQ8uE55vRvG7tlz5Lcd5w5adtPds2ce78envfePe+x55KwAAaVIAANKkAACkSQEASJMCAJAmBQAgTQoAQJoUAIA0KQAAaVIAANKkAACkSQEASJMCAJD2833f9DEAAGO8FQCANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIO3/AOuUh6iGeBBdAAAAAElFTkSuQmCC" alt="QR Code"><div class="qs">https://rdstudiohub.github.io/Yasmeen-Al-Dammam/</div><div class="fdv"></div><div class="ql" style="font-size:10px">مطعم ياسمين الدمام © 2024</div></div><script>
+(function(){var t=document.querySelectorAll(".ctab"),s=document.querySelectorAll(".sec");t.forEach(function(b){b.addEventListener("click",function(){t.forEach(function(x){x.classList.remove("a")});s.forEach(function(x){x.classList.remove("a")});b.classList.add("a");document.getElementById(b.getAttribute("data-c")).classList.add("a")})})})();
 </script>
-</body>
-</html>
+</div></body></html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><meta charset="UTF-8">
+<title>Yasmeen Al Dammam Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800;900&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 12mm 14mm; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:Tajawal,Playfair Display,sans-serif; direction:rtl; color:#1a1a1a; background:#fff; }
+.page { page-break-after:always; }
+
+/* Cover */
+.cvr { text-align:center; padding-top:80mm; }
+.cvr-ln { width:60mm; height:0.5mm; background:#D4A843; margin:0 auto; }
+.cvr-ar { font-size:36pt; font-weight:900; color:#D4A843; margin:10mm 0 3mm; }
+.cvr-en { font-family:Playfair Display,serif; font-size:16pt; font-weight:700; color:#999; letter-spacing:5px; text-transform:uppercase; margin-bottom:6mm; }
+.cvr-tg { font-size:22pt; font-weight:700; color:#333; margin-top:5mm; }
+.cvr-tge { font-family:Playfair Display,serif; font-size:11pt; font-weight:400; color:#D4A843; letter-spacing:3px; text-transform:uppercase; margin-top:2mm; }
+.cvr-dv { width:30mm; height:0.3mm; background:#D4A843; margin:6mm auto; }
+.cvr-lc { font-size:10pt; color:#999; margin-top:8mm; }
+.cvr-ct { font-size:9pt; color:#aaa; margin-top:3mm; }
+
+/* Header */
+.phd { background:#D4A843; padding:6px 0; text-align:center; margin-bottom:4mm; }
+.pha { font-size:14pt; font-weight:800; color:#1a1a1a; }
+.phe { font-family:Playfair Display,serif; font-size:8pt; font-weight:600; color:rgba(26,26,26,.6); letter-spacing:2px; }
+
+/* Content */
+.cat { border:1px solid #e0d5c0; border-radius:2mm; margin-bottom:3mm; overflow:hidden; }
+.chd { background:#D4A843; padding:2mm 3mm; text-align:center; }
+.ca { font-size:11pt; font-weight:800; color:#1a1a1a; display:block; }
+.ce { font-family:Playfair Display,serif; font-size:7pt; font-weight:600; color:rgba(26,26,26,.6); letter-spacing:1.5px; display:block; text-transform:uppercase; }
+table { width:100%; border-collapse:collapse; font-size:7.5pt; }
+th { background:#f5f0e8; color:#333; font-weight:700; padding:1.5mm 1mm; text-align:center; font-size:7pt; }
+td { padding:1.2mm 1mm; text-align:center; border-bottom:1px solid #eee; }
+tr:last-child td { border-bottom:none; }
+.nm { text-align:right; }
+.nar { font-size:8.5pt; font-weight:700; color:#1a1a1a; display:block; line-height:1.3; }
+.nen { font-family:Playfair Display,serif; font-size:6.5pt; color:#999; display:block; }
+.pr { font-size:8pt; font-weight:700; color:#D4A843; }
+.na { color:#ddd; }
+.juice-cat table { font-size:6.5pt; }
+.juice-cat td { padding:1mm 0.7mm; }
+.juice-cat .nar { font-size:7pt; }
+.juice-cat .nen { font-size:5.5pt; }
+.juice-cat .pr { font-size:7pt; }
+
+/* Flex layout for two cats per page */
+.flex { display:flex; gap:3mm; }
+.flex .col { flex:1; min-width:0; }
+.flex .cat { margin-bottom:2mm; }
+
+/* Back cover */
+.bcvr { text-align:center; padding-top:50mm; }
+.bcvr-ln { width:50mm; height:0.5mm; background:#D4A843; margin:0 auto; }
+.bcvr-ar { font-size:24pt; font-weight:900; color:#D4A843; margin:6mm 0 2mm; }
+.bcvr-en { font-family:Playfair Display,serif; font-size:12pt; font-weight:700; color:#999; letter-spacing:4px; margin-bottom:5mm; }
+.bcvr-qr { width:90px; height:90px; margin:5mm auto; display:block; }
+.bcvr-sc { font-size:8pt; color:#aaa; letter-spacing:1px; }
+.bcvr-dv { width:25mm; height:0.3mm; background:#ddd; margin:5mm auto; }
+.bcvr-lc { font-size:9pt; color:#666; margin-top:3mm; }
+.bcvr-tl { font-size:9pt; color:#888; margin-top:1.5mm; }
+.bcvr-ft { font-size:7pt; color:#bbb; margin-top:6mm; }
+
+@media print { body { -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+
+<!-- ═══ PAGE 1: COVER ═══ -->
+<div class="page">
+<div class="cvr">
+<div class="cvr-ln"></div>
+<div class="cvr-ar">مطعم ياسمين الدمام</div>
+<div class="cvr-en">YASMEEN AL DAMMAM</div>
+<div class="cvr-ln"></div>
+<div class="cvr-tg">قائمة الطعام</div>
+<div class="cvr-tge">MENU</div>
+<div class="cvr-dv"></div>
+<div class="cvr-lc">الدمام، المملكة العربية السعودية</div>
+<div class="cvr-ct">📞 0535604862 &nbsp;|&nbsp; 💬 واتساب</div>
+</div>
+</div>
+
+<!-- ═══ PAGE 2: GRILLS + APPETIZERS ═══ -->
+<div class="page">
+<div class="phd"><span class="pha">قائمة الطعام</span><span class="phe">MENU</span></div>
+<div class="flex">
+<div class="col">
+<div class="cat"><div class="chd"><span class="ca">المشويات</span><span class="ce">GRILLS</span></div>
+<table><tr><th>فرد</th><th>½ ك</th><th>كيلو</th></tr>
+<tr><td class="nm"><span class="nar">كباب لحم</span><span class="nen">Kabab Lahm</span></td><td class="pr">30</td><td class="pr">60</td><td class="pr">120</td></tr>
+<tr><td class="nm"><span class="nar">كباب دجاج</span><span class="nen">Kabab Dajaj</span></td><td class="pr">20</td><td class="pr">40</td><td class="pr">80</td></tr>
+<tr><td class="nm"><span class="nar">أوصال لحم</span><span class="nen">Osal Lahm</span></td><td class="pr">35</td><td class="pr">70</td><td class="pr">140</td></tr>
+<tr><td class="nm"><span class="nar">أوصال دجاج شيش طاووق</span><span class="nen">Shish Tawook</span></td><td class="pr">25</td><td class="pr">50</td><td class="pr">100</td></tr>
+<tr><td class="nm"><span class="nar">مشكل مشويات</span><span class="nen">Mixed Grills</span></td><td class="pr">28</td><td class="pr">55</td><td class="pr">110</td></tr>
+<tr><td class="nm"><span class="nar">مشكل مشويات دجاج</span><span class="nen">Mixed Grills Chicken</span></td><td class="pr">33</td><td class="pr">65</td><td class="pr">130</td></tr>
+<tr><td class="nm"><span class="nar">مشكل لحم</span><span class="nen">Mixed Meat</span></td><td class="pr">23</td><td class="pr">45</td><td class="pr">90</td></tr>
+<tr><td class="nm"><span class="nar">كباب بيتي لحم</span><span class="nen">Kabab Bayti</span></td><td class="pr">35</td><td class="pr">70</td><td class="pr">140</td></tr>
+<tr><td class="nm"><span class="nar">كباب كرز لحم</span><span class="nen">Kabab Karaz</span></td><td class="pr">45</td><td class="pr">90</td><td class="pr">180</td></tr>
+<tr><td class="nm"><span class="nar">كباب ميرو</span><span class="nen">Kabab Miru</span></td><td class="pr">35</td><td class="pr">70</td><td class="pr">140</td></tr>
+<tr><td class="nm"><span class="nar">كباب خشخاش</span><span class="nen">Kabab Khashkhash</span></td><td class="pr">35</td><td class="pr">70</td><td class="pr">140</td></tr>
+<tr><td class="nm"><span class="nar">اسكندر كباب لحم</span><span class="nen">Iskandar Lahm</span></td><td class="pr">35</td><td class="pr">70</td><td class="pr">140</td></tr>
+<tr><td class="nm"><span class="nar">اسكندر كباب دجاج</span><span class="nen">Iskandar Dajaj</span></td><td class="pr">25</td><td class="pr">50</td><td class="pr">100</td></tr>
+<tr><td class="nm"><span class="nar">ريش غنم</span><span class="nen">Lamb Chops</span></td><td class="pr">40</td><td class="pr">80</td><td class="pr">160</td></tr>
+<tr><td class="nm"><span class="nar">دجاج على الفحم نصف</span><span class="nen">Grilled Chicken Half</span></td><td class="pr">20</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">دجاج على الفحم حبة</span><span class="nen">Grilled Chicken Full</span></td><td class="pr">40</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">عرايس</span><span class="nen">Arayis</span></td><td class="pr">20</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">ماريا بالجبن</span><span class="nen">Maria bil Jibn</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">تكة البحرين 4 أسياخ</span><span class="nen">Tikkat Bahrain</span></td><td class="pr">30</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+</table></div>
+
+</div>
+<div class="col">
+<div class="cat"><div class="chd"><span class="ca">مقبلات وسلطات</span><span class="ce">APPETIZERS &amp; SALADS</span></div>
+<table><tr><th>صغير</th><th>كبير</th></tr>
+<tr><td class="nm"><span class="nar">حمص</span><span class="nen">Hummus</span></td><td class="pr">7</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">متبل</span><span class="nen">Mutabbal</span></td><td class="pr">7</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">بابا غنوج</span><span class="nen">Baba Ghanoush</span></td><td class="pr">7</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">فتوش</span><span class="nen">Fattoush</span></td><td class="pr">7</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">سلطة خضراء</span><span class="nen">Green Salad</span></td><td class="pr">7</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">سلطة يوناني</span><span class="nen">Greek Salad</span></td><td class="pr na">–</td><td class="pr">15</td></tr>
+<tr><td class="nm"><span class="nar">سلطة سيزر</span><span class="nen">Caesar Salad</span></td><td class="pr na">–</td><td class="pr">15</td></tr>
+</table></div>
+
+</div>
+</div>
+</div>
+
+<!-- ═══ PAGE 3: SHAWARMA + SANDWICHES ═══ -->
+<div class="page">
+<div class="phd"><span class="pha">قائمة الطعام</span><span class="phe">MENU</span></div>
+<div class="flex">
+<div class="col">
+<div class="cat"><div class="chd"><span class="ca">أطباق الشاورما</span><span class="ce">SHAWARMA PLATTERS</span></div>
+<table><tr><th>د S</th><th>د M</th><th>د L</th><th>ل S</th><th>ل M</th><th>ل L</th></tr>
+<tr><td class="nm"><span class="nar">صحن شاورما عربي مقطع</span><span class="nen">Arabic Sliced</span></td><td class="pr">20</td><td class="pr">25</td><td class="pr">30</td><td class="pr">25</td><td class="pr">38</td><td class="pr">42</td></tr>
+<tr><td class="nm"><span class="nar">صحن شاورما عربي فرط</span><span class="nen">Arabic Loose</span></td><td class="pr">25</td><td class="pr">30</td><td class="pr">35</td><td class="pr">30</td><td class="pr">45</td><td class="pr">60</td></tr>
+<tr><td class="nm"><span class="nar">وجبة شاورما اسكندر</span><span class="nen">Iskandar Meal</span></td><td class="pr">25</td><td class="pr">30</td><td class="pr">35</td><td class="pr">25</td><td class="pr">38</td><td class="pr">42</td></tr>
+<tr><td class="nm"><span class="nar">شاورما ياسمين الدمام</span><span class="nen">Yasmeen Special</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr">35</td><td class="pr">30</td><td class="pr na">–</td><td class="pr">47</td></tr>
+<tr><td class="nm"><span class="nar">وجبة كاساديا</span><span class="nen">Quesadilla Meal</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr">35</td><td class="pr">30</td><td class="pr na">–</td><td class="pr">47</td></tr>
+<tr><td class="nm"><span class="nar">وجبة إكسترا</span><span class="nen">Extra Meal</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr">35</td><td class="pr na">–</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">وجبة بانية</span><span class="nen">Pane Meal</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr">35</td><td class="pr na">–</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">وجبة فرايز</span><span class="nen">Fries Meal</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr">35</td><td class="pr na">–</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">وجبة فرايز بالخضار</span><span class="nen">Fries &amp; Veg</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr">35</td><td class="pr na">–</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">وجبة ديتس</span><span class="nen">Diet Meal</span></td><td class="pr">25</td><td class="pr na">–</td><td class="pr">35</td><td class="pr na">–</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">وجبة عائلية اقتصادية</span><span class="nen">Family Economy</span></td><td class="pr na">–</td><td class="pr na">–</td><td class="pr">60</td><td class="pr na">–</td><td class="pr na">–</td><td class="pr">70</td></tr>
+</table></div>
+
+<div class="cat"><div class="chd"><span class="ca">🍟 البطاطس المقلية</span><span class="ce">FRIES &amp; SIDES</span></div>
+<table><tr><th>صغير</th><th>وسط</th><th>كبير</th></tr>
+<tr><td class="nm"><span class="nar">صحن بطاطس</span><span class="nen">Fries Plate</span></td><td class="pr">5</td><td class="pr">10</td><td class="pr">15</td></tr>
+<tr><td class="nm"><span class="nar">صحن بطاطس بالجبن</span><span class="nen">Cheese Fries</span></td><td class="pr">10</td><td class="pr">15</td><td class="pr">20</td></tr>
+<tr><td class="nm"><span class="nar">بطاطس ويدجز</span><span class="nen">Wedges</span></td><td class="pr">15</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+<tr><td class="nm"><span class="nar">بطاطس ديبرز</span><span class="nen">Dippers</span></td><td class="pr">15</td><td class="pr na">–</td><td class="pr na">–</td></tr>
+</table></div>
+
+</div>
+<div class="col">
+<div class="cat"><div class="chd"><span class="ca">🥩 سندويتشات مشويات</span><span class="ce">GRILLED SANDWICHES</span></div>
+<table><tr><th>SR</th></tr>
+<tr><td class="nm"><span class="nar">ساندويتش كباب لحم</span><span class="nen">Kabab Lahm</span></td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">ساندويتش كباب دجاج</span><span class="nen">Kabab Dajaj</span></td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">ساندويتش أوصال لحم</span><span class="nen">Osal Lahm</span></td><td class="pr">12</td></tr>
+<tr><td class="nm"><span class="nar">ساندويتش شيش طاووق</span><span class="nen">Shish Tawook</span></td><td class="pr">9</td></tr>
+</table></div>
+
+<div class="cat"><div class="chd"><span class="ca">🌯 شاورما وسندويتشات</span><span class="ce">SHAWARMA &amp; OTHER</span></div>
+<table><tr><th>دجاج</th><th>لحم</th></tr>
+<tr><td class="nm"><span class="nar">صاروخ</span><span class="nen">Sarooh</span></td><td class="pr">11</td><td class="pr">15</td></tr>
+<tr><td class="nm"><span class="nar">فطر</span><span class="nen">Mushroom</span></td><td class="pr">9</td><td class="pr">12</td></tr>
+<tr><td class="nm"><span class="nar">شامي</span><span class="nen">Shami</span></td><td class="pr">7</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">صامولي</span><span class="nen">Samooli</span></td><td class="pr">7</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">إيطالي</span><span class="nen">Italian</span></td><td class="pr">9</td><td class="pr">14</td></tr>
+<tr><td class="nm"><span class="nar">فرنسي</span><span class="nen">French</span></td><td class="pr">11</td><td class="pr">18</td></tr>
+<tr><td class="nm"><span class="nar">مكسيكي</span><span class="nen">Mexican</span></td><td class="pr">15</td><td class="pr">18</td></tr>
+<tr><td class="nm"><span class="nar">صاروخ بانية</span><span class="nen">Pane Sarooh</span></td><td class="pr">15</td><td class="pr">25</td></tr>
+<tr><td class="nm"><span class="nar">بطاطس</span><span class="nen">Potato</span></td><td class="pr">5</td><td class="pr">7</td></tr>
+</table></div>
+
+</div>
+</div>
+</div>
+
+<!-- ═══ PAGE 4: PIZZA + PASTRIES ═══ -->
+<div class="page">
+<div class="phd"><span class="pha">قائمة الطعام</span><span class="phe">MENU</span></div>
+<div class="flex">
+<div class="col">
+<div class="cat"><div class="chd"><span class="ca">البيتزا</span><span class="ce">PIZZA</span></div>
+<table><tr><th>صغير</th><th>وسط</th><th>كبير</th></tr>
+<tr><td class="nm"><span class="nar">خضار</span><span class="nen">Veggie</span></td><td class="pr">12</td><td class="pr">18</td><td class="pr">24</td></tr>
+<tr><td class="nm"><span class="nar">مارغريتا</span><span class="nen">Margherita</span></td><td class="pr">12</td><td class="pr">18</td><td class="pr">24</td></tr>
+<tr><td class="nm"><span class="nar">مكسيكان</span><span class="nen">Mexican</span></td><td class="pr">12</td><td class="pr">18</td><td class="pr">24</td></tr>
+<tr><td class="nm"><span class="nar">دجاج</span><span class="nen">Chicken</span></td><td class="pr">15</td><td class="pr">21</td><td class="pr">27</td></tr>
+<tr><td class="nm"><span class="nar">لحم</span><span class="nen">Meat</span></td><td class="pr">17</td><td class="pr">23</td><td class="pr">29</td></tr>
+<tr><td class="nm"><span class="nar">مشكل</span><span class="nen">Mixed</span></td><td class="pr">16</td><td class="pr">21</td><td class="pr">28</td></tr>
+<tr><td class="nm"><span class="nar">رنش</span><span class="nen">Ranch</span></td><td class="pr">15</td><td class="pr">20</td><td class="pr">27</td></tr>
+<tr><td class="nm"><span class="nar">باربيكيو</span><span class="nen">BBQ</span></td><td class="pr">15</td><td class="pr">20</td><td class="pr">27</td></tr>
+<tr><td class="nm"><span class="nar">بيبيروني</span><span class="nen">Pepperoni</span></td><td class="pr">15</td><td class="pr">20</td><td class="pr">27</td></tr>
+<tr><td class="nm"><span class="nar">شاورما دجاج</span><span class="nen">Chicken Shawarma</span></td><td class="pr">15</td><td class="pr">21</td><td class="pr">27</td></tr>
+<tr><td class="nm"><span class="nar">شاورما لحم</span><span class="nen">Meat Shawarma</span></td><td class="pr">17</td><td class="pr">23</td><td class="pr">29</td></tr>
+<tr><td class="nm"><span class="nar">تونة</span><span class="nen">Tuna</span></td><td class="pr">15</td><td class="pr">20</td><td class="pr">25</td></tr>
+<tr><td class="nm"><span class="nar">هواي</span><span class="nen">Hawaiian</span></td><td class="pr">15</td><td class="pr">20</td><td class="pr">25</td></tr>
+<tr><td class="nm"><span class="nar">فود تندر</span><span class="nen">Chicken Tenders</span></td><td class="pr">15</td><td class="pr">20</td><td class="pr">25</td></tr>
+<tr><td class="nm"><span class="nar">تورتيلا</span><span class="nen">Tortilla</span></td><td class="pr">15</td><td class="pr">20</td><td class="pr">25</td></tr>
+</table></div>
+
+</div>
+<div class="col">
+<div class="cat"><div class="chd"><span class="ca">فطائر ياسمين</span><span class="ce">YASMEEN PASTRIES</span></div>
+<table><tr><th>SR</th></tr>
+<tr><td class="nm"><span class="nar">نوتيلا</span><span class="nen">Nutella</span></td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">فلافل</span><span class="nen">Falafel</span></td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">بيض بالجبن</span><span class="nen">Egg &amp; Cheese</span></td><td class="pr">12</td></tr>
+<tr><td class="nm"><span class="nar">بالبنة والبيض</span><span class="nen">Labneh &amp; Egg</span></td><td class="pr">12</td></tr>
+<tr><td class="nm"><span class="nar">سبانخ</span><span class="nen">Spinach</span></td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">محمرة</span><span class="nen">Mhamra</span></td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">محمرة بالجبن</span><span class="nen">Mhamra &amp; Cheese</span></td><td class="pr">7</td></tr>
+<tr><td class="nm"><span class="nar">بطاطس</span><span class="nen">Potato</span></td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">بطاطس بالجبن</span><span class="nen">Potato &amp; Cheese</span></td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">جبن سائل</span><span class="nen">Cream Cheese</span></td><td class="pr">7</td></tr>
+<tr><td class="nm"><span class="nar">مكس جبن</span><span class="nen">Mixed Cheese</span></td><td class="pr">9</td></tr>
+<tr><td class="nm"><span class="nar">لبنة</span><span class="nen">Labneh</span></td><td class="pr">7</td></tr>
+<tr><td class="nm"><span class="nar">لبنة بالزعتر</span><span class="nen">Labneh Zaatar</span></td><td class="pr">7</td></tr>
+<tr><td class="nm"><span class="nar">لبنة بالعسل</span><span class="nen">Labneh Honey</span></td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">زعتر</span><span class="nen">Zaatar</span></td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">مشكل دجاج</span><span class="nen">Mixed Chicken</span></td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">مشكل لحم</span><span class="nen">Mixed Meat</span></td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">عكاوي</span><span class="nen">Akkawi</span></td><td class="pr">9</td></tr>
+<tr><td class="nm"><span class="nar">عش البلبل</span><span class="nen">Ashp Balbul</span></td><td class="pr">9</td></tr>
+</table></div>
+
+<div class="cat"><div class="chd"><span class="ca">إضافات</span><span class="ce">EXTRAS</span></div>
+<table><tr><th>SR</th></tr>
+<tr><td class="nm"><span class="nar">قطعة جبن شيدر</span><span class="nen">Cheddar Cheese</span></td><td class="pr">1</td></tr>
+<tr><td class="nm"><span class="nar">جبن موزاريلا</span><span class="nen">Mozzarella</span></td><td class="pr">3</td></tr>
+<tr><td class="nm"><span class="nar">أي علبة صوص</span><span class="nen">Sauce Pack</span></td><td class="pr">2</td></tr>
+</table></div>
+
+</div>
+</div>
+</div>
+
+<!-- ═══ PAGE 5: JUICES ═══ -->
+<div class="page">
+<div class="phd"><span class="pha">عصائر ومشروبات</span><span class="phe">FRESH JUICES &amp; SMOOTHIES</span></div>
+<div class="cat juice-cat"><div class="chd"><span class="ca">قائمة المشروبات</span><span class="ce">BEVERAGES</span></div>
+<table><tr><th>1 لتر</th><th>1.5 لتر</th><th>كبير</th><th>وسط</th></tr>
+<tr><td class="nm"><span class="nar">كوكتيل</span><span class="nen">Cocktail</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">طبقات</span><span class="nen">Layered</span></td><td class="pr">18</td><td class="pr">24</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">مانجو</span><span class="nen">Mango</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">فراولة</span><span class="nen">Strawberry</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">جوافة</span><span class="nen">Guava</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">ليمون نعناع</span><span class="nen">Lemon Mint</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">خربز</span><span class="nen">Melon</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">بطيخ</span><span class="nen">Watermelon</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">موز بالحليب</span><span class="nen">Banana Milk</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">موز حليب عسل</span><span class="nen">Banana Honey</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">أناناس</span><span class="nen">Pineapple</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">رمان</span><span class="nen">Pomegranate</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">كيوي</span><span class="nen">Kiwi</span></td><td class="pr">15</td><td class="pr">22</td><td class="pr">8</td><td class="pr">6</td></tr>
+<tr><td class="nm"><span class="nar">عوار القلب</span><span class="nen">Awar al-Qalb</span></td><td class="pr">18</td><td class="pr">24</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">أصفهاني</span><span class="nen">Isfahani</span></td><td class="pr">18</td><td class="pr">24</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">عصير جي</span><span class="nen">Juice J</span></td><td class="pr">18</td><td class="pr">24</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">موهيتو</span><span class="nen">Mojito</span></td><td class="pr na">–</td><td class="pr na">–</td><td class="pr">12</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">أفوكادو</span><span class="nen">Avocado</span></td><td class="pr">18</td><td class="pr">24</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">برتقال</span><span class="nen">Orange</span></td><td class="pr">18</td><td class="pr">24</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">سبيشل ياسمين</span><span class="nen">Yasmeen Special</span></td><td class="pr">20</td><td class="pr">25</td><td class="pr">12</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">فيتامين C</span><span class="nen">Vitamin C</span></td><td class="pr">18</td><td class="pr">25</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">عصير روقان</span><span class="nen">Rawqan</span></td><td class="pr">18</td><td class="pr">25</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">عرايسي</span><span class="nen">Arayisi</span></td><td class="pr">18</td><td class="pr">24</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">عرايسي ملكي</span><span class="nen">Arayisi King</span></td><td class="pr">18</td><td class="pr">25</td><td class="pr">15</td><td class="pr">12</td></tr>
+<tr><td class="nm"><span class="nar">سلطة فواكة كاسة</span><span class="nen">Fruit Salad Cup</span></td><td class="pr na">–</td><td class="pr na">–</td><td class="pr">10</td><td class="pr">8</td></tr>
+<tr><td class="nm"><span class="nar">سلطة فواكة صحن</span><span class="nen">Fruit Salad Plate</span></td><td class="pr na">–</td><td class="pr na">–</td><td class="pr na">–</td><td class="pr">10</td></tr>
+<tr><td class="nm"><span class="nar">ميلك شيك أوريو لوتس</span><span class="nen">Oreo Lotus Shake</span></td><td class="pr">18</td><td class="pr">25</td><td class="pr">10</td><td class="pr">8</td></tr>
+</table></div>
+
+</div>
+
+<!-- ═══ PAGE 6: BACK COVER ═══ -->
+<div class="page">
+<div class="bcvr">
+<div class="bcvr-ln"></div>
+<div class="bcvr-ar">مطعم ياسمين الدمام</div>
+<div class="bcvr-en">YASMEEN AL DAMMAM</div>
+<div class="bcvr-ln"></div>
+<img class="bcvr-qr" src="data:image/png;base64,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AEBaepmQE1sW/27Yst94w5a7+d492nKc597bF32PtwIAkCYFACBNCgBAmhQAgDQpAABpUgAA0qQAAKRJAQBIkwIAkCYFACBNCgBAmhQAgDQpAABplgn5L26sip2bXVS7YctG3Oz/fM+WqzR7nLOrjLO/dbO8FQCANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEhLLxO+ty51w42rdGMBzILiidnruWX57fw4t5zRrPeeuvfuu7cCAJAmBQAgTQoAQJoUAIA0KQAAaVIAANKkAACkSQEASJMCAJAmBQAgTQoAQJoUAIA0KQAAaQ8uE55vRvG7tlz5Lcd5w5adtPds2ce78envfePe+x55KwAAaVIAANKkAACkSQEASJMCAJAmBQAgTQoAQJoUAIA0KQAAaVIAANKkAACkSQEASJMCAJD2833f9DEAAGO8FQCANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIO3/AOuUh6iGeBBdAAAAAElFTkSuQmCC" alt="QR">
+<div class="bcvr-sc">امسح الكود لعرض القائمة الرقمية</div>
+<div class="bcvr-dv"></div>
+<div class="bcvr-lc">📍 الدمام، المملكة العربية السعودية</div>
+<div class="bcvr-tl">📞 0535604862</div>
+<div class="bcvr-tl">💬 واتساب: 0535604862</div>
+<div class="bcvr-dv"></div>
+<div class="bcvr-ft">تم التصميم بواسطة: مالك رضوان</div>
+</div>
+</div>
+
+</body></html>

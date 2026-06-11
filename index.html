@@ -89,6 +89,7 @@ img{max-width:100%;height:auto;display:block}
 .cn{display:block;width:100%;position:relative}
 .cn img{width:100%;height:260px;object-fit:cover;display:block}
 .cn::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,168,67,.1) 0%,transparent 70%);pointer-events:none}
+.hero-video{width:100%;height:260px;object-fit:cover;display:block}
 
 /* ── SECTION ENHANCEMENTS ── */
 .sec{display:none;margin:8px;background:linear-gradient(135deg,#161616,#1e1e1e);border-radius:14px;overflow:hidden;border:1px solid rgba(212,168,67,.12)}
@@ -132,7 +133,11 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 
-<div class="cn reveal-scale d2"><img src="hero_banner.jpg" alt="Yasmeen Al Dammam" loading="lazy"></div>
+<div class="cn reveal-scale d2">
+  <video class="hero-video" autoplay loop muted playsinline poster="hero_banner.jpg">
+    <source src="hero_animation.mp4" type="video/mp4">
+  </video>
+</div>
 
 <nav class="cnav" id="cnav">
 <button class="ctab a" data-c="g"><span>مشويات</span><span class="te">Grills</span></button>

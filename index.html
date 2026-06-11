@@ -11,6 +11,41 @@
 html{scroll-behavior:smooth;scroll-padding-top:60px}
 body{font-family:Tajawal,Playfair Display,sans-serif;background:#0a0a0a;color:rgba(255,255,255,.88);min-height:100vh;overflow-x:hidden;direction:rtl}
 img{max-width:100%;height:auto;display:block}
+
+/* ── PRELOADER ── */
+#preloader{position:fixed;inset:0;z-index:9999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s,visibility .6s}
+#preloader.hide{opacity:0;visibility:hidden}
+.pl-gold{width:60px;height:60px;border:3px solid rgba(212,168,67,.1);border-top-color:#D4A843;border-radius:50%;animation:spin 1s linear infinite}
+.pl-text{color:#D4A843;font-size:14px;font-weight:700;margin-top:15px;letter-spacing:3px;font-family:Tajawal,sans-serif}
+.pl-bar{width:120px;height:2px;background:rgba(212,168,67,.1);border-radius:2px;margin-top:10px;overflow:hidden}
+.pl-bar-in{height:100%;width:0;background:linear-gradient(90deg,#D4A843,#FFD700);border-radius:2px;animation:loadBar 1.8s ease forwards}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes loadBar{to{width:100%}}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
+.reveal.show{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease}
+.reveal-left.show{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal-right.show{opacity:1;transform:translateX(0)}
+.reveal-scale{opacity:0;transform:scale(.9);transition:opacity .6s ease,transform .6s ease}
+.reveal-scale.show{opacity:1;transform:scale(1)}
+.reveal-blur{opacity:0;filter:blur(10px);transform:translateY(20px);transition:opacity .8s ease,filter .8s ease,transform .8s ease}
+.reveal-blur.show{opacity:1;filter:blur(0);transform:translateY(0)}
+
+/* Stagger delays */
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+.d7{transition-delay:.7s}.d8{transition-delay:.8s}
+
+/* ── 3D TILT ── */
+.tilt{transition:transform .3s ease;transform-style:preserve-3d;perspective:800px}
+.tilt:hover{transform:rotateX(-3deg) rotateY(3deg) scale(1.02)}
+
+/* ── FLOATING PARTICLES ── */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.p{position:absolute;width:3px;height:3px;background:#D4A843;border-radius:50%;opacity:0;animation:float linear infinite}
 .m-wrap{max-width:500px;margin:0 auto;overflow:hidden}
 .hdr{background:linear-gradient(135deg,#1a1a1a,#2a2a2a,#1a1a1a);text-align:center;padding:28px 16px 18px;position:relative}
 .hdr::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D4A843,transparent,#D4A843)}
@@ -23,17 +58,11 @@ img{max-width:100%;height:auto;display:block}
 .bw{background:#25D366;color:#fff}
 .bc{background:#D4A843;color:#1a1a1a}
 .bm{background:transparent;color:#D4A843;border:1px solid #D4A843}
-.cn{display:block;width:100%}
-.cn img{width:100%;height:260px;object-fit:cover;display:block}
 .cnav{position:sticky;top:0;z-index:100;background:#0a0a0a;padding:6px 4px;overflow-x:auto;display:flex;gap:3px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid #D4A843}
 .cnav::-webkit-scrollbar{display:none}
 .ctab{flex-shrink:0;padding:6px 10px;border:none;border-radius:20px;font-family:Tajawal,sans-serif;font-size:12px;font-weight:600;background:rgba(212,168,67,.08);color:rgba(255,255,255,.5);cursor:pointer;transition:.25s;border:1px solid transparent;line-height:1.2}
 .ctab .te{font-family:Playfair Display,serif;font-size:7px;opacity:.5;display:block}
 .ctab.a,.ctab:active{background:rgba(212,168,67,.2);color:#D4A843;border-color:rgba(212,168,67,.3)}
-.sec{display:none;margin:8px;background:linear-gradient(135deg,#161616,#1e1e1e);border-radius:14px;overflow:hidden;border:1px solid rgba(212,168,67,.12)}
-.sec.a{display:block;animation:fadeIn .3s}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.sh{background:linear-gradient(135deg,#D4A843,#b8922f);padding:14px;text-align:center}
 .sh h2{font-size:22px;font-weight:900;color:#1a1a1a;margin:0}
 .sh .she{font-family:Playfair Display,serif;font-size:11px;font-weight:600;color:rgba(26,26,26,.7);letter-spacing:2px;text-transform:uppercase}
 .bimg{width:100%;height:200px;object-fit:cover;display:block}
@@ -49,11 +78,49 @@ img{max-width:100%;height:auto;display:block}
 .ft .ql{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px}
 .ft .qs{font-size:9px;color:rgba(255,255,255,.25)}
 .ft .fdv{width:30px;height:1px;background:#D4A843;margin:8px auto}
+@keyframes float{
+  0%{opacity:0;transform:translateY(100vh) scale(0)}
+  10%{opacity:.6}
+  90%{opacity:.6}
+  100%{opacity:0;transform:translateY(-10vh) scale(1)}
+}
+
+/* ── GLOW EFFECT ON HERO ── */
+.cn{display:block;width:100%;position:relative}
+.cn img{width:100%;height:260px;object-fit:cover;display:block}
+.cn::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,168,67,.1) 0%,transparent 70%);pointer-events:none}
+
+/* ── SECTION ENHANCEMENTS ── */
+.sec{display:none;margin:8px;background:linear-gradient(135deg,#161616,#1e1e1e);border-radius:14px;overflow:hidden;border:1px solid rgba(212,168,67,.12)}
+.sec.a{display:block;animation:fadeIn .5s cubic-bezier(.25,.46,.45,.94)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* Shine effect on headers */
+.sh{background:linear-gradient(135deg,#D4A843,#b8922f);padding:14px;text-align:center;position:relative;overflow:hidden}
+.sh::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);animation:shine 4s ease-in-out infinite}
+@keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+/* Item row hover */
+.tbl tr{transition:background .25s}
+.tbl tr:hover{background:rgba(212,168,67,.04)}
+
+/* Price glow */
+.tbl td:last-child{position:relative}
 </style>
 </head>
 <body>
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pl-gold"></div>
+  <div class="pl-text">ياسمين الدمام</div>
+  <div class="pl-bar"><div class="pl-bar-in"></div></div>
+</div>
+
+<!-- FLOATING PARTICLES -->
+<div class="particles" id="particles"></div>
+
 <div class="m-wrap">
-<div class="hdr">
+<div class="hdr reveal-blur d1">
 <div class="l-ar">مطعم ياسمين الدمام</div>
 <div class="l-en">Yasmeen Al Dammam</div>
 <div class="hdv"></div>
@@ -65,7 +132,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 </div>
 
-<div class="cn"><img src="hero_banner.jpg" alt="Yasmeen Al Dammam" loading="lazy"></div>
+<div class="cn reveal-scale d2"><img src="hero_banner.jpg" alt="Yasmeen Al Dammam" loading="lazy"></div>
 
 <nav class="cnav" id="cnav">
 <button class="ctab a" data-c="g"><span>مشويات</span><span class="te">Grills</span></button>
@@ -77,9 +144,8 @@ img{max-width:100%;height:auto;display:block}
 <button class="ctab" data-c="jc"><span>عصائر</span><span class="te">Juices</span></button>
 <button class="ctab" data-c="ex"><span>إضافات</span><span class="te">Extras</span></button>
 </nav>
-<div class="sec a" id="g" data-title="Grills">
-<div class="sh"><h2>المشويات</h2><div class="she">Grills</div></div>
-<img class="bimg" src="grills_banner.jpg" alt="المشويات" loading="lazy">
+<div class="sec a reveal" id="g"><div class="sh"><h2>المشويات</h2><div class="she">Grills</div></div>
+<img class="bimg tilt" src="grills_banner.jpg"
 <table class="tbl"><tr><th>الصنف</th><th>فرد</th><th>نصف كيلو</th><th>كيلو</th></tr>
 <tr><td>كباب لحم<span class="es">Kabab Lahm</span></td><td>30</td><td>60</td><td>120</td></tr>
 <tr><td>كباب دجاج<span class="es">Kabab Dajaj</span></td><td>20</td><td>40</td><td>80</td></tr>
@@ -102,9 +168,9 @@ img{max-width:100%;height:auto;display:block}
 <tr><td>تكة البحرين 4 أسياخ<span class="es">Tikkat Bahrain</span></td><td>30</td><td>-</td><td>-</td></tr>
 </table>
 </div>
-<div class="sec" id="ap" data-title="Appetizers &amp; Salads">
+<div class="sec reveal" id="ap" data-title="Appetizers &amp; Salads">
 <div class="sh"><h2>مقبلات وسلطات</h2><div class="she">Appetizers &amp; Salads</div></div>
-<img class="bimg" src="appetizers_banner.jpg" alt="مقبلات وسلطات" loading="lazy">
+<img class="bimg tilt" src="appetizers_banner.jpg" alt="مقبلات وسلطات" loading="lazy">
 <table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>كبير</th></tr>
 <tr><td>حمص<span class="es">Hummus</span></td><td>7</td><td>10</td></tr>
 <tr><td>متبل<span class="es">Mutabbal</span></td><td>7</td><td>10</td></tr>
@@ -115,9 +181,9 @@ img{max-width:100%;height:auto;display:block}
 <tr><td>سلطة سيزر<span class="es">Caesar Salad</span></td><td>-</td><td>15</td></tr>
 </table>
 </div>
-<div class="sec" id="sw">
+<div class="sec reveal" id="sw">
 <div class="sh"><h2>أطباق الشاورما</h2><div class="she">Shawarma Platters</div></div>
-<img class="bimg" src="shawarma_banner.jpg" alt="Shawarma" loading="lazy">
+<img class="bimg tilt" src="shawarma_banner.jpg" alt="Shawarma" loading="lazy">
 <table class="tbl"><tr><th>الصنف</th><th>د S</th><th>د M</th><th>د L</th><th>ل S</th><th>ل M</th><th>ل L</th></tr>
 <tr><td>صحن شاورما عربي مقطع<span class="es">Arabic Sliced</span></td><td>20</td><td>25</td><td>30</td><td>25</td><td>38</td><td>42</td></tr>
 <tr><td>صحن شاورما عربي فرط<span class="es">Arabic Loose</span></td><td>25</td><td>30</td><td>35</td><td>30</td><td>45</td><td>60</td></tr>
@@ -139,9 +205,9 @@ img{max-width:100%;height:auto;display:block}
 <tr><td>بطاطس ديبرز<span class="es">Dippers</span></td><td>15</td><td>-</td><td>-</td></tr>
 </table>
 </div>
-<div class="sec" id="sd">
+<div class="sec reveal" id="sd">
 <div class="sh"><h2>سندويتشات</h2><div class="she">Sandwiches</div></div>
-<img class="bimg" src="sandwiches_banner.jpg" alt="Sandwiches" loading="lazy">
+<img class="bimg tilt" src="sandwiches_banner.jpg" alt="Sandwiches" loading="lazy">
 <div class="sb">🥩 سندويتشات مشويات <span class="sbe">Grilled Sandwiches</span></div>
 <table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr>
 <tr><td>ساندويتش كباب لحم<span class="es">Kabab Lahm</span></td><td>10</td></tr>
@@ -162,9 +228,9 @@ img{max-width:100%;height:auto;display:block}
 <tr><td>بطاطس<span class="es">Potato</span></td><td>5</td><td>7</td></tr>
 </table>
 </div>
-<div class="sec" id="pz" data-title="Pizza">
+<div class="sec reveal" id="pz" data-title="Pizza">
 <div class="sh"><h2>البيتزا</h2><div class="she">Pizza</div></div>
-<img class="bimg" src="pizza_banner.jpg" alt="البيتزا" loading="lazy">
+<img class="bimg tilt" src="pizza_banner.jpg" alt="البيتزا" loading="lazy">
 <table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>وسط</th><th>كبير</th></tr>
 <tr><td>خضار<span class="es">Veggie</span></td><td>12</td><td>18</td><td>24</td></tr>
 <tr><td>مارغريتا<span class="es">Margherita</span></td><td>12</td><td>18</td><td>24</td></tr>
@@ -183,9 +249,9 @@ img{max-width:100%;height:auto;display:block}
 <tr><td>تورتيلا<span class="es">Tortilla</span></td><td>15</td><td>20</td><td>25</td></tr>
 </table>
 </div>
-<div class="sec" id="pt" data-title="Yasmeen Pastries">
+<div class="sec reveal" id="pt" data-title="Yasmeen Pastries">
 <div class="sh"><h2>فطائر ياسمين</h2><div class="she">Yasmeen Pastries</div></div>
-<img class="bimg" src="pastries_banner.jpg" alt="فطائر ياسمين" loading="lazy">
+<img class="bimg tilt" src="pastries_banner.jpg" alt="فطائر ياسمين" loading="lazy">
 <table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr>
 <tr><td>نوتيلا<span class="es">Nutella</span></td><td>10</td></tr>
 <tr><td>فلافل<span class="es">Falafel</span></td><td>10</td></tr>
@@ -208,9 +274,9 @@ img{max-width:100%;height:auto;display:block}
 <tr><td>عش البلبل<span class="es">Ashp Balbul</span></td><td>9</td></tr>
 </table>
 </div>
-<div class="sec" id="jc">
+<div class="sec reveal" id="jc">
 <div class="sh"><h2>عصائر ومشروبات</h2><div class="she">Fresh Juices &amp; Smoothies</div></div>
-<img class="bimg" src="juices_banner.jpg" alt="Juices" loading="lazy">
+<img class="bimg tilt" src="juices_banner.jpg" alt="Juices" loading="lazy">
 <table class="tbl"><tr><th>الصنف</th><th>1 لتر</th><th>1.5 لتر</th><th>كبير</th><th>وسط</th></tr>
 <tr><td>كوكتيل<span class="es">Cocktail</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
 <tr><td>طبقات<span class="es">Layered</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
@@ -241,7 +307,7 @@ img{max-width:100%;height:auto;display:block}
 <tr><td>ميلك شيك أوريو لوتس<span class="es">Oreo Lotus Shake</span></td><td>18</td><td>25</td><td>10</td><td>8</td></tr>
 </table>
 </div>
-<div class="sec" id="ex" data-title="Extras">
+<div class="sec reveal" id="ex" data-title="Extras">
 <div class="sh"><h2>إضافات</h2><div class="she">Extras</div></div>
 <table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr>
 <tr><td>قطعة جبن شيدر<span class="es">Cheddar Cheese</span></td><td>1</td></tr>
@@ -258,6 +324,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 <script>
 (function(){
+  // ── Tab Switching ──
   var tabs = document.querySelectorAll('.ctab');
   var secs = document.querySelectorAll('.sec');
   tabs.forEach(function(tab){
@@ -268,9 +335,65 @@ img{max-width:100%;height:auto;display:block}
       secs.forEach(function(s){ s.classList.remove('a'); });
       this.classList.add('a');
       var target = document.getElementById(id);
-      if (target) target.classList.add('a');
+      if (target) { target.classList.add('a'); }
     });
   });
+
+  // ── Preloader ──
+  window.addEventListener('load', function(){
+    setTimeout(function(){
+      document.getElementById('preloader').classList.add('hide');
+    }, 800);
+  });
+
+  // ── Scroll Reveal Animations (Intersection Observer) ──
+  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealEls.forEach(function(el){ observer.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('show'); });
+  }
+
+  // ── Floating Particles ──
+  var container = document.getElementById('particles');
+  if (container) {
+    for (var i = 0; i < 15; i++) {
+      var p = document.createElement('div');
+      p.className = 'p';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
+      p.style.animationDuration = (Math.random() * 10 + 8) + 's';
+      p.style.animationDelay = (Math.random() * 10) + 's';
+      container.appendChild(p);
+    }
+  }
+
+  // ── 3D Tilt on Touch Devices ──
+  var tiltEls = document.querySelectorAll('.tilt');
+  tiltEls.forEach(function(el){
+    el.addEventListener('mousemove', function(e){
+      var rect = el.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var cx = rect.width / 2;
+      var cy = rect.height / 2;
+      var dx = (x - cx) / cx * 5;
+      var dy = (y - cy) / cy * -5;
+      el.style.transform = 'perspective(800px) rotateX(' + dy + 'deg) rotateY(' + dx + 'deg) scale(1.02)';
+    });
+    el.addEventListener('mouseleave', function(){
+      el.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+
 })();
 </script>
 </div>

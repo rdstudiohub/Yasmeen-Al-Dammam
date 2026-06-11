@@ -133,7 +133,7 @@ img{max-width:100%;height:auto;display:block}
 </div>
 
 <div class="hero-video-wrap reveal-scale d2">
-  <video autoplay loop muted playsinline poster="hero_banner.jpg">
+  <video autoplay loop muted playsinline preload="auto" poster="hero_banner.jpg">
     <source src="hero_animation.mp4" type="video/mp4">
   </video>
 </div>
@@ -348,6 +348,12 @@ img{max-width:100%;height:auto;display:block}
     setTimeout(function(){
       document.getElementById('preloader').classList.add('hide');
     }, 800);
+
+    // ── Force hero video to play ──
+    var heroVideo = document.querySelector('.hero-video-wrap video');
+    if (heroVideo) {
+      heroVideo.play().catch(function(){});
+    }
   });
 
   // ── Scroll Reveal Animations (Intersection Observer) ──

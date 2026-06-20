@@ -51,7 +51,7 @@ cover = '''
     <div class="cover-tagline-en">MENU</div>
     <div class="cover-div"></div>
     <div class="cover-loc">الدمام، المملكة العربية السعودية</div>
-    <div class="cover-contact">📞 0535604862 &nbsp;|&nbsp; 💬 واتساب</div>
+    <div class="cover-contact">📞 0554159831 &nbsp;|&nbsp; 💬 واتساب</div>
   </div>
 </div>
 '''
@@ -165,8 +165,8 @@ back = f'''
     <div class="back-scan">امسح الكود لعرض القائمة الرقمية</div>
     <div class="back-div"></div>
     <div class="back-loc">📍 الدمام، المملكة العربية السعودية</div>
-    <div class="back-tel">📞 0535604862</div>
-    <div class="back-wa">💬 واتساب: 0535604862</div>
+    <div class="back-tel">📞 0554159831</div>
+    <div class="back-wa">💬 واتساب: 0554159831</div>
     <div class="back-div"></div>
     <div class="back-foot">تم التصميم بواسطة: مالك رضوان</div>
   </div>

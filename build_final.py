@@ -250,8 +250,8 @@ img{max-width:100%;height:auto;display:block}
 <div class="hdv"></div>
 <div class="hs">\u0627\u0644\u062f\u0645\u0627\u0645\u060c \u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629</div>
 <div class="ha">
-<a class="bw" href="https://wa.me/966535604862" target="_blank">\U0001f4ac \u0648\u0627\u062a\u0633\u0627\u0628</a>
-<a class="bc" href="tel:+966535604862">\U0001f4de \u0627\u062a\u0635\u0627\u0644</a>
+<a class="bw" href="https://wa.me/966554159831" target="_blank">\U0001f4ac \u0648\u0627\u062a\u0633\u0627\u0628</a>
+<a class="bc" href="tel:+966****9831">\U0001f4de \u0627\u062a\u0635\u0627\u0644</a>
 <a class="bm" href="#">\U0001f4cd \u0627\u0644\u0645\u0648\u0642\u0639</a>
 </div>
 </div>

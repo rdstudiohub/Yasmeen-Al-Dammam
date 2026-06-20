@@ -238,8 +238,8 @@ img{{max-width:100%;height:auto;display:block}}
 <div class="hdiv"></div>
 <div class="h-sub">الدمام، المملكة العربية السعودية</div>
 <div class="h-actions">
-<a class="btn-wa" href="https://wa.me/966535604862" target="_blank">💬 واتساب</a>
-<a class="btn-call" href="tel:+966535604862">📞 اتصال</a>
+<a class="btn-wa" href="https://wa.me/966554159831" target="_blank">💬 واتساب</a>
+<a class="btn-call" href="tel:+966554159831">📞 اتصال</a>
 <a class="btn-map" href="https://maps.app.goo.gl/YasmeenDammam" target="_blank">📍 موقعنا</a>
 </div>
 </div>

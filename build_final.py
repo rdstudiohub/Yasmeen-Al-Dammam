@@ -55,6 +55,11 @@ shawarma = [
     ('وجبة عائلية اقتصادية','Family Economy','-','-','60','-','-','70'),
 ]
 
+broasted = [
+    ('بروستد ناعم','Broasted Normal','18'),
+    ('بروستد حار','Broasted Spicy','18'),
+]
+
 fries = [
     ('صحن بطاطس','Fries Plate','5','10','15'),
     ('صحن بطاطس بالجبن','Cheese Fries','10','15','20'),
@@ -266,6 +271,7 @@ img{max-width:100%;height:auto;display:block}
 <button class="ctab" data-c="pz"><span>\u0628\u064a\u062a\u0632\u0627</span><span class="te">Pizza</span></button>
 <button class="ctab" data-c="pt"><span>\u0641\u0637\u0627\u0626\u0631</span><span class="te">Pastries</span></button>
 <button class="ctab" data-c="jc"><span>\u0639\u0635\u0627\u0626\u0631</span><span class="te">Juices</span></button>
+<button class="ctab" data-c="br"><span>بروستد</span><span class="te">Broasted</span></button>
 <button class="ctab" data-c="ex"><span>\u0625\u0636\u0627\u0641\u0627\u062a</span><span class="te">Extras</span></button>
 </nav>
 '''
@@ -343,6 +349,10 @@ for row in juices:
     html += '</tr>\n'
 html += '</table>\n</div>\n'
 
+# 7. Broasted
+html += section('br', 'بروستد الدجاج', 'Broasted Chicken', 'broasted_chicken.jpg',
+    ['الصنف', 'السعر'], broasted)
+
 # 8. Extras
 html += section('ex', '\u0625\u0636\u0627\u0641\u0627\u062a', 'Extras', '',
     ['\u0627\u0644\u0635\u0646\u0641', '\u0627\u0644\u0633\u0639\u0631'], extras)
@@ -378,7 +388,7 @@ html += '''<script>
 </body>
 </html>'''
 
-path = '/opt/data/yasmeen-menu/index.html'
+path = 'index.html'
 with open(path, 'w', encoding='utf-8') as f:
     f.write(html)
 

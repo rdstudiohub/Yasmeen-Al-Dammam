@@ -11,41 +11,6 @@
 html{scroll-behavior:smooth;scroll-padding-top:60px}
 body{font-family:Tajawal,Playfair Display,sans-serif;background:#0a0a0a;color:rgba(255,255,255,.88);min-height:100vh;overflow-x:hidden;direction:rtl}
 img{max-width:100%;height:auto;display:block}
-
-/* ── PRELOADER ── */
-#preloader{position:fixed;inset:0;z-index:9999;background:#0a0a0a;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .6s,visibility .6s}
-#preloader.hide{opacity:0;visibility:hidden}
-.pl-gold{width:60px;height:60px;border:3px solid rgba(212,168,67,.1);border-top-color:#D4A843;border-radius:50%;animation:spin 1s linear infinite}
-.pl-text{color:#D4A843;font-size:14px;font-weight:700;margin-top:15px;letter-spacing:3px;font-family:Tajawal,sans-serif}
-.pl-bar{width:120px;height:2px;background:rgba(212,168,67,.1);border-radius:2px;margin-top:10px;overflow:hidden}
-.pl-bar-in{height:100%;width:0;background:linear-gradient(90deg,#D4A843,#FFD700);border-radius:2px;animation:loadBar 1.8s ease forwards}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes loadBar{to{width:100%}}
-
-/* ── REVEAL ANIMATIONS ── */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
-.reveal.show{opacity:1;transform:translateY(0)}
-.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease}
-.reveal-left.show{opacity:1;transform:translateX(0)}
-.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease}
-.reveal-right.show{opacity:1;transform:translateX(0)}
-.reveal-scale{opacity:0;transform:scale(.9);transition:opacity .6s ease,transform .6s ease}
-.reveal-scale.show{opacity:1;transform:scale(1)}
-.reveal-blur{opacity:0;filter:blur(10px);transform:translateY(20px);transition:opacity .8s ease,filter .8s ease,transform .8s ease}
-.reveal-blur.show{opacity:1;filter:blur(0);transform:translateY(0)}
-
-/* Stagger delays */
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
-.d7{transition-delay:.7s}.d8{transition-delay:.8s}
-
-/* ── 3D TILT ── */
-.tilt{transition:transform .3s ease;transform-style:preserve-3d;perspective:800px}
-.tilt:hover{transform:rotateX(-3deg) rotateY(3deg) scale(1.02)}
-
-/* ── FLOATING PARTICLES ── */
-.particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.p{position:absolute;width:3px;height:3px;background:#D4A843;border-radius:50%;opacity:0;animation:float linear infinite}
 .m-wrap{max-width:500px;margin:0 auto;overflow:hidden}
 .hdr{background:linear-gradient(135deg,#1a1a1a,#2a2a2a,#1a1a1a);text-align:center;padding:28px 16px 18px;position:relative}
 .hdr::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#D4A843,transparent,#D4A843)}
@@ -58,85 +23,49 @@ img{max-width:100%;height:auto;display:block}
 .bw{background:#25D366;color:#fff}
 .bc{background:#D4A843;color:#1a1a1a}
 .bm{background:transparent;color:#D4A843;border:1px solid #D4A843}
+.cn{display:block;width:100%}
+.cn img{width:100%;height:260px;object-fit:cover;display:block}
 .cnav{position:sticky;top:0;z-index:100;background:#0a0a0a;padding:6px 4px;overflow-x:auto;display:flex;gap:3px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-bottom:2px solid #D4A843}
 .cnav::-webkit-scrollbar{display:none}
 .ctab{flex-shrink:0;padding:6px 10px;border:none;border-radius:20px;font-family:Tajawal,sans-serif;font-size:12px;font-weight:600;background:rgba(212,168,67,.08);color:rgba(255,255,255,.5);cursor:pointer;transition:.25s;border:1px solid transparent;line-height:1.2}
 .ctab .te{font-family:Playfair Display,serif;font-size:7px;opacity:.5;display:block}
 .ctab.a,.ctab:active{background:rgba(212,168,67,.2);color:#D4A843;border-color:rgba(212,168,67,.3)}
+.sec{display:none;margin:8px;background:linear-gradient(135deg,#161616,#1e1e1e);border-radius:14px;overflow:hidden;border:1px solid rgba(212,168,67,.12)}
+.sec.a{display:block;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.sh{background:linear-gradient(135deg,#D4A843,#b8922f);padding:14px;text-align:center}
 .sh h2{font-size:22px;font-weight:900;color:#1a1a1a;margin:0}
 .sh .she{font-family:Playfair Display,serif;font-size:11px;font-weight:600;color:rgba(26,26,26,.7);letter-spacing:2px;text-transform:uppercase}
 .bimg{width:100%;height:200px;object-fit:cover;display:block}
-.tbl{width:100%;border-collapse:collapse;font-size:14px}
-.tbl th{background:rgba(212,168,67,.15);color:#D4A843;font-weight:600;padding:10px 6px;text-align:center;font-size:13px}
-.tbl td{padding:12px 8px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);color:#fff;font-size:14px}
-.tbl td:first-child{text-align:right;font-weight:700;font-size:17px}
-.tbl .es{font-family:Playfair Display,serif;font-size:14px;color:rgba(255,255,255,.7);display:block;font-weight:500}
-.sb{padding:10px 14px 6px;font-size:14px;font-weight:700;color:#D4A843;border-bottom:1px solid rgba(212,168,67,.1);background:rgba(212,168,67,.03)}
-.sb .sbe{font-family:Playfair Display,serif;font-size:12px;font-weight:400;color:rgba(255,255,255,.55);display:block}
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{background:rgba(212,168,67,.15);color:#D4A843;font-weight:600;padding:7px 4px;text-align:center;font-size:10px}
+.tbl td{padding:6px 4px;text-align:center;border-bottom:1px solid rgba(255,255,255,.04);color:#fff}
+.tbl td:first-child{text-align:right;font-weight:600;font-size:13px}
+.tbl .es{font-family:Playfair Display,serif;font-size:8px;color:rgba(255,255,255,.35);display:block;font-weight:400}
+.sb{padding:7px 14px 3px;font-size:12px;font-weight:700;color:#D4A843;border-bottom:1px solid rgba(212,168,67,.1);background:rgba(212,168,67,.03)}
+.sb .sbe{font-family:Playfair Display,serif;font-size:8px;font-weight:400;color:rgba(255,255,255,.35);display:block}
 .ft{background:linear-gradient(135deg,#1a1a1a,#0a0a0a);text-align:center;padding:25px 16px;margin-top:10px;border-top:2px solid #D4A843}
 .ft .qr{width:110px;height:110px;margin:0 auto 10px;display:block}
 .ft .ql{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:6px}
 .ft .qs{font-size:9px;color:rgba(255,255,255,.25)}
 .ft .fdv{width:30px;height:1px;background:#D4A843;margin:8px auto}
-@keyframes float{
-  0%{opacity:0;transform:translateY(100vh) scale(0)}
-  10%{opacity:.6}
-  90%{opacity:.6}
-  100%{opacity:0;transform:translateY(-10vh) scale(1)}
-}
-
-/* ── GLOW EFFECT ON HERO ── */
-.hero-video-wrap{position:relative;width:100%;height:320px;overflow:hidden;background:#000}
-.hero-video-wrap video{position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%)}
-.hero-video-wrap::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,168,67,.1) 0%,transparent 70%);pointer-events:none}
-
-/* ── SECTION ENHANCEMENTS ── */
-.sec{display:none;margin:8px;background:linear-gradient(135deg,#161616,#1e1e1e);border-radius:14px;overflow:hidden;border:1px solid rgba(212,168,67,.12)}
-.sec.a{display:block;animation:fadeIn .5s cubic-bezier(.25,.46,.45,.94)}
-@keyframes fadeIn{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-
-/* Shine effect on headers */
-.sh{background:linear-gradient(135deg,#D4A843,#b8922f);padding:14px;text-align:center;position:relative;overflow:hidden}
-.sh::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.1) 50%,transparent 70%);animation:shine 4s ease-in-out infinite}
-@keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-
-/* Item row hover */
-.tbl tr{transition:background .25s}
-.tbl tr:hover{background:rgba(212,168,67,.04)}
-
-/* Price glow */
-.tbl td:last-child{position:relative}
 </style>
 </head>
 <body>
-<!-- PRELOADER -->
-<div id="preloader">
-  <div class="pl-gold"></div>
-  <div class="pl-text">ياسمين الدمام</div>
-  <div class="pl-bar"><div class="pl-bar-in"></div></div>
-</div>
-
-<!-- FLOATING PARTICLES -->
-<div class="particles" id="particles"></div>
-
 <div class="m-wrap">
-<div class="hdr reveal-blur d1">
+<div class="hdr">
 <div class="l-ar">مطعم ياسمين الدمام</div>
 <div class="l-en">Yasmeen Al Dammam</div>
 <div class="hdv"></div>
 <div class="hs">الدمام، المملكة العربية السعودية</div>
 <div class="ha">
 <a class="bw" href="https://wa.me/966554159831" target="_blank">💬 واتساب</a>
-<a class="bc" href="tel:+966554159831">📞 اتصال</a>
-<a class="bm" href="https://maps.app.goo.gl/Jnwxkj6XPkPpuEi59" target="_blank">📍 الموقع</a>
+<a class="bc" href="tel:+966****9831">📞 اتصال</a>
+<a class="bm" href="#">📍 الموقع</a>
 </div>
 </div>
 
-<div class="hero-video-wrap reveal-scale d2">
-  <video autoplay loop muted playsinline preload="auto" poster="hero_banner.jpg">
-    <source src="hero_animation.mp4" type="video/mp4">
-  </video>
-</div>
+<div class="cn"><img src="hero_banner.jpg" alt="Yasmeen Al Dammam" loading="lazy"></div>
 
 <nav class="cnav" id="cnav">
 <button class="ctab a" data-c="g"><span>مشويات</span><span class="te">Grills</span></button>
@@ -146,135 +75,198 @@ img{max-width:100%;height:auto;display:block}
 <button class="ctab" data-c="pz"><span>بيتزا</span><span class="te">Pizza</span></button>
 <button class="ctab" data-c="pt"><span>فطائر</span><span class="te">Pastries</span></button>
 <button class="ctab" data-c="jc"><span>عصائر</span><span class="te">Juices</span></button>
+<button class="ctab" data-c="br"><span>بروستد</span><span class="te">Broasted</span></button>
+<button class="ctab" data-c="ex"><span>إضافات</span><span class="te">Extras</span></button>
 </nav>
-<div class="sec a reveal" id="g"><div class="sh"><h2>مشويات ياسمين الدمام</h2><div class="she">Yasmeen Grills</div></div>
-<img class="bimg tilt" src="grills_banner.jpg" alt="مشويات ياسمين الدمام" loading="lazy">
-<table class="tbl"><tr><th>اسم الصنف</th><th>نفر</th><th>نص كيلو</th><th>كيلو</th><th>سعرات حرارية</th></tr>
-<tr><td>كباب لحم<span class="es">Kabab Lahm</span></td><td>40</td><td>80</td><td>160</td><td>700</td></tr>
-<tr><td>كباب دجاج<span class="es">Kabab Dajaj</span></td><td>20</td><td>40</td><td>80</td><td>520</td></tr>
-<tr><td>أوصال دجاج شيش طاووق<span class="es">Shish Tawook</span></td><td>25</td><td>50</td><td>-</td><td>480</td></tr>
-<tr><td>مشكل مشويات<span class="es">Mixed Grills</span></td><td>34</td><td>67</td><td>134</td><td>650</td></tr>
-<tr><td>مشكل دجاج<span class="es">Mixed Grills Chicken</span></td><td>27</td><td>57</td><td>114</td><td>540</td></tr>
-<tr><td>كباب كرز لحم<span class="es">Kabab Karaz</span></td><td>45</td><td>12 قطعة</td><td>-</td><td>850</td></tr>
-<tr><td>كباب ميرو<span class="es">Kabab Miru</span></td><td>40</td><td>12 قطعة</td><td>-</td><td>800</td></tr>
-<tr><td>كباب خشخاش<span class="es">Kabab Khashkhash</span></td><td>40</td><td>-</td><td>-</td><td>750</td></tr>
-<tr><td>دجاج على الفحم نصف حبه<span class="es">Grilled Chicken Half</span></td><td>20</td><td>-</td><td>-</td><td>700</td></tr>
-<tr><td>دجاج على الفحم حبه<span class="es">Grilled Chicken Full</span></td><td>40</td><td>-</td><td>-</td><td>1400</td></tr>
+<div class="sec a" id="g" data-title="Grills">
+<div class="sh"><h2>المشويات</h2><div class="she">Grills</div></div>
+<img class="bimg" src="grills_banner.jpg" alt="المشويات" loading="lazy">
+<table class="tbl"><tr><th>الصنف</th><th>فرد</th><th>نصف كيلو</th><th>كيلو</th></tr>
+<tr><td>كباب لحم<span class="es">Kabab Lahm</span></td><td>30</td><td>60</td><td>120</td></tr>
+<tr><td>كباب دجاج<span class="es">Kabab Dajaj</span></td><td>20</td><td>40</td><td>80</td></tr>
+<tr><td>أوصال لحم<span class="es">Osal Lahm</span></td><td>35</td><td>70</td><td>140</td></tr>
+<tr><td>أوصال دجاج شيش طاووق<span class="es">Shish Tawook</span></td><td>25</td><td>50</td><td>100</td></tr>
+<tr><td>مشكل مشويات<span class="es">Mixed Grills</span></td><td>28</td><td>55</td><td>110</td></tr>
+<tr><td>مشكل مشويات دجاج<span class="es">Mixed Grills Chicken</span></td><td>33</td><td>65</td><td>130</td></tr>
+<tr><td>مشكل لحم<span class="es">Mixed Meat</span></td><td>23</td><td>45</td><td>90</td></tr>
+<tr><td>كباب بيتي لحم<span class="es">Kabab Bayti</span></td><td>35</td><td>70</td><td>140</td></tr>
+<tr><td>كباب كرز لحم<span class="es">Kabab Karaz</span></td><td>45</td><td>90</td><td>180</td></tr>
+<tr><td>كباب ميرو<span class="es">Kabab Miru</span></td><td>35</td><td>70</td><td>140</td></tr>
+<tr><td>كباب خشخاش<span class="es">Kabab Khashkhash</span></td><td>35</td><td>70</td><td>140</td></tr>
+<tr><td>اسكندر كباب لحم<span class="es">Iskandar Lahm</span></td><td>35</td><td>70</td><td>140</td></tr>
+<tr><td>اسكندر كباب دجاج<span class="es">Iskandar Dajaj</span></td><td>25</td><td>50</td><td>100</td></tr>
+<tr><td>ريش غنم<span class="es">Lamb Chops</span></td><td>40</td><td>80</td><td>160</td></tr>
+<tr><td>دجاج على الفحم نصف<span class="es">Grilled Chicken Half</span></td><td>20</td><td>-</td><td>-</td></tr>
+<tr><td>دجاج على الفحم حبة<span class="es">Grilled Chicken Full</span></td><td>40</td><td>-</td><td>-</td></tr>
+<tr><td>عرايس<span class="es">Arayis</span></td><td>20</td><td>-</td><td>-</td></tr>
+<tr><td>ماريا بالجبن<span class="es">Maria bil Jibn</span></td><td>25</td><td>-</td><td>-</td></tr>
+<tr><td>تكة البحرين 4 أسياخ<span class="es">Tikkat Bahrain</span></td><td>30</td><td>-</td><td>-</td></tr>
 </table>
-</div></div>
-<div class="sec reveal" id="ap" data-title="Appetizers &amp; Salads">
-<div class="sh"><h2>مقبلات ياسمين الدمام</h2><div class="she">Yasmeen Appetizers</div></div>
-<img class="bimg tilt" src="appetizers_banner.jpg" alt="مقبلات ياسمين الدمام" loading="lazy">
+</div>
+<div class="sec" id="ap" data-title="Appetizers &amp; Salads">
+<div class="sh"><h2>مقبلات وسلطات</h2><div class="she">Appetizers &amp; Salads</div></div>
+<img class="bimg" src="appetizers_banner.jpg" alt="مقبلات وسلطات" loading="lazy">
 <table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>كبير</th></tr>
 <tr><td>حمص<span class="es">Hummus</span></td><td>7</td><td>10</td></tr>
 <tr><td>متبل<span class="es">Mutabbal</span></td><td>7</td><td>10</td></tr>
+<tr><td>بابا غنوج<span class="es">Baba Ghanoush</span></td><td>7</td><td>10</td></tr>
 <tr><td>فتوش<span class="es">Fattoush</span></td><td>7</td><td>10</td></tr>
 <tr><td>سلطة خضراء<span class="es">Green Salad</span></td><td>7</td><td>10</td></tr>
+<tr><td>سلطة يوناني<span class="es">Greek Salad</span></td><td>-</td><td>15</td></tr>
+<tr><td>سلطة سيزر<span class="es">Caesar Salad</span></td><td>-</td><td>15</td></tr>
 </table>
-</div></div>
-<div class="sec reveal" id="sw">
-<div class="sh"><h2>أطباق ياسمين الدمام</h2><div class="she">Yasmeen Shawarma Dishes</div></div>
-<img class="bimg tilt" src="shawarma_banner.jpg" alt="أطباق ياسمين الدمام" loading="lazy">
-<table class="tbl">
-<tr><th>الصنف</th><th>صغير</th><th>وسط</th><th>كبير</th></tr>
-<tr style="background:rgba(212,168,67,.06)"><td colspan="4" style="text-align:center;font-weight:800;font-size:16px;color:#D4A843">صحن شاورما عربي مقطع<span class="es">Arabic Sliced Shawarma</span></td></tr>
-<tr><td style="padding-right:20px">🐔 دجاج</td><td>20</td><td>25</td><td>30</td></tr>
-<tr><td style="padding-right:20px">🥩 لحم</td><td>25</td><td>38</td><td>42</td></tr>
-<tr style="background:rgba(212,168,67,.06)"><td colspan="4" style="text-align:center;font-weight:800;font-size:16px;color:#D4A843">صحن شاورما عربي فرط (شرائح)<span class="es">Arabic Loose Slices</span></td></tr>
-<tr><td style="padding-right:20px">🐔 دجاج</td><td>25</td><td>30</td><td>35</td></tr>
-<tr><td style="padding-right:20px">🥩 لحم</td><td>30</td><td>45</td><td>60</td></tr>
-<tr style="background:rgba(212,168,67,.06)"><td colspan="4" style="text-align:center;font-weight:800;font-size:16px;color:#D4A843">صحن شاورما ياسمين الدمام<span class="es">Yasmeen Al Dammam Special</span></td></tr>
-<tr><td style="padding-right:20px">🐔 دجاج</td><td colspan="3">25</td></tr>
-<tr><td style="padding-right:20px">🥩 لحم</td><td colspan="3">35</td></tr>
-<tr style="background:rgba(212,168,67,.06)"><td colspan="4" style="text-align:center;font-weight:800;font-size:16px;color:#D4A843">وجبة شاورما كاساديا<span class="es">Shawarma Quesadilla</span></td></tr>
-<tr><td style="padding-right:20px">🐔 دجاج</td><td>25</td></tr>
-<tr><td style="padding-right:20px">🥩 لحم</td><td>35</td></tr>
-<tr style="background:rgba(212,168,67,.06)"><td colspan="4" style="text-align:center;font-weight:800;font-size:16px;color:#D4A843">وجبة شاورما فرايز<span class="es">Fries Shawarma Meal</span></td></tr>
-<tr><td style="padding-right:20px">🐔 دجاج</td><td>25</td><td>-</td><td>35</td></tr>
-<tr style="background:rgba(212,168,67,.06)"><td colspan="4" style="text-align:center;font-weight:800;font-size:16px;color:#D4A843">وجبة شاورما عائلية اقتصادية (ما بيبسي 1 لتر)<span class="es">Family Economy w/ Pepsi 1L</span></td></tr>
-<tr><td style="padding-right:20px">🐔 دجاج</td><td colspan="3">60</td></tr>
-<tr><td style="padding-right:20px">🥩 لحم</td><td colspan="3">70</td></tr>
+</div>
+<div class="sec" id="sw">
+<div class="sh"><h2>أطباق الشاورما</h2><div class="she">Shawarma Platters</div></div>
+<img class="bimg" src="shawarma_banner.jpg" alt="Shawarma" loading="lazy">
+<table class="tbl"><tr><th>الصنف</th><th>د S</th><th>د M</th><th>د L</th><th>ل S</th><th>ل M</th><th>ل L</th></tr>
+<tr><td>صحن شاورما عربي مقطع<span class="es">Arabic Sliced</span></td><td>20</td><td>25</td><td>30</td><td>25</td><td>38</td><td>42</td></tr>
+<tr><td>صحن شاورما عربي فرط<span class="es">Arabic Loose</span></td><td>25</td><td>30</td><td>35</td><td>30</td><td>45</td><td>60</td></tr>
+<tr><td>وجبة شاورما اسكندر<span class="es">Iskandar Meal</span></td><td>25</td><td>30</td><td>35</td><td>25</td><td>38</td><td>42</td></tr>
+<tr><td>شاورما ياسمين الدمام<span class="es">Yasmeen Special</span></td><td>25</td><td>-</td><td>35</td><td>30</td><td>-</td><td>47</td></tr>
+<tr><td>وجبة كاساديا<span class="es">Quesadilla Meal</span></td><td>25</td><td>-</td><td>35</td><td>30</td><td>-</td><td>47</td></tr>
+<tr><td>وجبة إكسترا<span class="es">Extra Meal</span></td><td>25</td><td>-</td><td>35</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>وجبة بانية<span class="es">Pane Meal</span></td><td>25</td><td>-</td><td>35</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>وجبة فرايز<span class="es">Fries Meal</span></td><td>25</td><td>-</td><td>35</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>وجبة فرايز بالخضار<span class="es">Fries &amp; Veg</span></td><td>25</td><td>-</td><td>35</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>وجبة ديتس<span class="es">Diet Meal</span></td><td>25</td><td>-</td><td>35</td><td>-</td><td>-</td><td>-</td></tr>
+<tr><td>وجبة عائلية اقتصادية<span class="es">Family Economy</span></td><td>-</td><td>-</td><td>60</td><td>-</td><td>-</td><td>70</td></tr>
 </table>
-<div class="sb">🍟 إضافات <span class="sbe">Sides</span></div>
+<div class="sb">🍟 البطاطس المقلية <span class="sbe">Fries &amp; Sides</span></div>
 <table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>وسط</th><th>كبير</th></tr>
 <tr><td>صحن بطاطس<span class="es">Fries Plate</span></td><td>5</td><td>10</td><td>15</td></tr>
 <tr><td>صحن بطاطس بالجبن<span class="es">Cheese Fries</span></td><td>10</td><td>15</td><td>20</td></tr>
+<tr><td>بطاطس ويدجز<span class="es">Wedges</span></td><td>15</td><td>-</td><td>-</td></tr>
+<tr><td>بطاطس ديبرز<span class="es">Dippers</span></td><td>15</td><td>-</td><td>-</td></tr>
 </table>
-</div></div>
-<div class="sec reveal" id="sd">
-<div class="sh"><h2>سندويتشات ياسمين الدمام</h2><div class="she">Yasmeen Sandwiches</div></div>
-<img class="bimg tilt" src="sandwiches_banner.jpg" alt="سندويتشات ياسمين الدمام" loading="lazy">
-<div class="sb">🥩 سندويتشات المشويات <span class="sbe">Grilled Sandwiches</span></div>
+</div>
+<div class="sec" id="sd">
+<div class="sh"><h2>سندويتشات</h2><div class="she">Sandwiches</div></div>
+<img class="bimg" src="sandwiches_banner.jpg" alt="Sandwiches" loading="lazy">
+<div class="sb">🥩 سندويتشات مشويات <span class="sbe">Grilled Sandwiches</span></div>
 <table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr>
 <tr><td>ساندويتش كباب لحم<span class="es">Kabab Lahm</span></td><td>10</td></tr>
 <tr><td>ساندويتش كباب دجاج<span class="es">Kabab Dajaj</span></td><td>8</td></tr>
+<tr><td>ساندويتش أوصال لحم<span class="es">Osal Lahm</span></td><td>12</td></tr>
 <tr><td>ساندويتش شيش طاووق<span class="es">Shish Tawook</span></td><td>9</td></tr>
 </table>
-<div class="sb">🌯 سندويتشات الشاورما <span class="sbe">Shawarma Sandwiches</span></div>
+<div class="sb">🌯 شاورما وسندويتشات <span class="sbe">Shawarma &amp; Other</span></div>
 <table class="tbl"><tr><th>الصنف</th><th>دجاج</th><th>لحم</th></tr>
-<tr><td>ساندويتش صاروخ<span class="es">Sarooh</span></td><td>11</td><td>15</td></tr>
-<tr><td>ساندويتش فطر<span class="es">Mushroom</span></td><td>9</td><td>12</td></tr>
-<tr><td>ساندويتش شامي<span class="es">Shami</span></td><td>7</td><td>10</td></tr>
-<tr><td>ساندويتش فرنسي<span class="es">French</span></td><td>11</td><td>18</td></tr>
-<tr><td>ساندويتش بطاطس<span class="es">Potato</span></td><td>5</td><td>7</td></tr>
+<tr><td>صاروخ<span class="es">Sarooh</span></td><td>11</td><td>15</td></tr>
+<tr><td>فطر<span class="es">Mushroom</span></td><td>9</td><td>12</td></tr>
+<tr><td>شامي<span class="es">Shami</span></td><td>7</td><td>10</td></tr>
+<tr><td>صامولي<span class="es">Samooli</span></td><td>7</td><td>10</td></tr>
+<tr><td>إيطالي<span class="es">Italian</span></td><td>9</td><td>14</td></tr>
+<tr><td>فرنسي<span class="es">French</span></td><td>11</td><td>18</td></tr>
+<tr><td>مكسيكي<span class="es">Mexican</span></td><td>15</td><td>18</td></tr>
+<tr><td>صاروخ بانية<span class="es">Pane Sarooh</span></td><td>15</td><td>25</td></tr>
+<tr><td>بطاطس<span class="es">Potato</span></td><td>5</td><td>7</td></tr>
 </table>
-</div></div>
-<div class="sec reveal" id="pz" data-title="Yasmeen Pizza">
-<div class="sh"><h2>قسم البيتزا</h2><div class="she">Pizza</div></div>
-<img class="bimg tilt" src="pizza_banner.jpg" alt="قسم البيتزا" loading="lazy">
-<table class="tbl"><tr><th>اسم الصنف</th><th>صغير</th><th>وسط</th><th>سعرات حرارية</th></tr>
-<tr><td>بيتزا خضار<span class="es">Veggie Pizza</span></td><td>12</td><td>15</td><td>1250</td></tr>
-<tr><td>بيتزا بيبروني<span class="es">Pepperoni Pizza</span></td><td>14</td><td>18</td><td>1600</td></tr>
-<tr><td>بيتزا فور تشيز<span class="es">Four Cheese Pizza</span></td><td>12</td><td>17</td><td>1700</td></tr>
-<tr><td>بيتزا عش الليل<span class="es">Alash Al Layl Pizza</span></td><td>10</td><td>14</td><td>1450</td></tr>
-<tr><td>بيتزا شاورما دجاج<span class="es">Chicken Shawarma Pizza</span></td><td>12</td><td>15</td><td>1550</td></tr>
-<tr><td>بيتزا مارغريتا<span class="es">Margherita Pizza</span></td><td>10</td><td>14</td><td>1350</td></tr>
-<tr><td>بيتزا شاورما لحم<span class="es">Meat Shawarma Pizza</span></td><td>12</td><td>16</td><td>1700</td></tr>
-<tr><td>بيتزا باربيكيو<span class="es">BBQ Pizza</span></td><td>11</td><td>15</td><td>1500</td></tr>
+</div>
+<div class="sec" id="pz" data-title="Pizza">
+<div class="sh"><h2>البيتزا</h2><div class="she">Pizza</div></div>
+<img class="bimg" src="pizza_banner.jpg" alt="البيتزا" loading="lazy">
+<table class="tbl"><tr><th>الصنف</th><th>صغير</th><th>وسط</th><th>كبير</th></tr>
+<tr><td>خضار<span class="es">Veggie</span></td><td>12</td><td>18</td><td>24</td></tr>
+<tr><td>مارغريتا<span class="es">Margherita</span></td><td>12</td><td>18</td><td>24</td></tr>
+<tr><td>مكسيكان<span class="es">Mexican</span></td><td>12</td><td>18</td><td>24</td></tr>
+<tr><td>دجاج<span class="es">Chicken</span></td><td>15</td><td>21</td><td>27</td></tr>
+<tr><td>لحم<span class="es">Meat</span></td><td>17</td><td>23</td><td>29</td></tr>
+<tr><td>مشكل<span class="es">Mixed</span></td><td>16</td><td>21</td><td>28</td></tr>
+<tr><td>رنش<span class="es">Ranch</span></td><td>15</td><td>20</td><td>27</td></tr>
+<tr><td>باربيكيو<span class="es">BBQ</span></td><td>15</td><td>20</td><td>27</td></tr>
+<tr><td>بيبيروني<span class="es">Pepperoni</span></td><td>15</td><td>20</td><td>27</td></tr>
+<tr><td>شاورما دجاج<span class="es">Chicken Shawarma</span></td><td>15</td><td>21</td><td>27</td></tr>
+<tr><td>شاورما لحم<span class="es">Meat Shawarma</span></td><td>17</td><td>23</td><td>29</td></tr>
+<tr><td>تونة<span class="es">Tuna</span></td><td>15</td><td>20</td><td>25</td></tr>
+<tr><td>هواي<span class="es">Hawaiian</span></td><td>15</td><td>20</td><td>25</td></tr>
+<tr><td>فود تندر<span class="es">Chicken Tenders</span></td><td>15</td><td>20</td><td>25</td></tr>
+<tr><td>تورتيلا<span class="es">Tortilla</span></td><td>15</td><td>20</td><td>25</td></tr>
 </table>
-</div></div>
-<div class="sec reveal" id="pt" data-title="Yasmeen Pastries">
-<div class="sh"><h2>فطائر ياسمين الدمام</h2><div class="she">Yasmeen Pastries</div></div>
-<img class="bimg tilt" src="pastries_banner.jpg" alt="فطائر ياسمين الدمام" loading="lazy">
+</div>
+<div class="sec" id="pt" data-title="Yasmeen Pastries">
+<div class="sh"><h2>فطائر ياسمين</h2><div class="she">Yasmeen Pastries</div></div>
+<img class="bimg" src="pastries_banner.jpg" alt="فطائر ياسمين" loading="lazy">
 <table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr>
-<tr><td>فطيرة محمرة<span class="es">Mhamra Pastry</span></td><td>6</td></tr>
-<tr><td>فطيرة محمرة بالجبن<span class="es">Mhamra &amp; Cheese Pastry</span></td><td>7</td></tr>
-<tr><td>فطيرة جبن سائل<span class="es">Cream Cheese Pastry</span></td><td>7</td></tr>
-<tr><td>فطيرة مكس جبن<span class="es">Mixed Cheese Pastry</span></td><td>6</td></tr>
-<tr><td>فطيرة لبنة<span class="es">Labneh Pastry</span></td><td>7</td></tr>
-<tr><td>فطيرة لبنة بالزعتر<span class="es">Labneh &amp; Zaatar Pastry</span></td><td>7</td></tr>
-<tr><td>فطيرة لبنة بالعسل<span class="es">Labneh &amp; Honey Pastry</span></td><td>8</td></tr>
-<tr><td>فطيرة زعتر<span class="es">Zaatar Pastry</span></td><td>6</td></tr>
-<tr><td>فطيرة عكاوي<span class="es">Akkawi Pastry</span></td><td>9</td></tr>
+<tr><td>نوتيلا<span class="es">Nutella</span></td><td>10</td></tr>
+<tr><td>فلافل<span class="es">Falafel</span></td><td>10</td></tr>
+<tr><td>بيض بالجبن<span class="es">Egg &amp; Cheese</span></td><td>12</td></tr>
+<tr><td>بالبنة والبيض<span class="es">Labneh &amp; Egg</span></td><td>12</td></tr>
+<tr><td>سبانخ<span class="es">Spinach</span></td><td>8</td></tr>
+<tr><td>محمرة<span class="es">Mhamra</span></td><td>6</td></tr>
+<tr><td>محمرة بالجبن<span class="es">Mhamra &amp; Cheese</span></td><td>7</td></tr>
+<tr><td>بطاطس<span class="es">Potato</span></td><td>8</td></tr>
+<tr><td>بطاطس بالجبن<span class="es">Potato &amp; Cheese</span></td><td>10</td></tr>
+<tr><td>جبن سائل<span class="es">Cream Cheese</span></td><td>7</td></tr>
+<tr><td>مكس جبن<span class="es">Mixed Cheese</span></td><td>9</td></tr>
+<tr><td>لبنة<span class="es">Labneh</span></td><td>7</td></tr>
+<tr><td>لبنة بالزعتر<span class="es">Labneh Zaatar</span></td><td>7</td></tr>
+<tr><td>لبنة بالعسل<span class="es">Labneh Honey</span></td><td>8</td></tr>
+<tr><td>زعتر<span class="es">Zaatar</span></td><td>6</td></tr>
+<tr><td>مشكل دجاج<span class="es">Mixed Chicken</span></td><td>8</td></tr>
+<tr><td>مشكل لحم<span class="es">Mixed Meat</span></td><td>10</td></tr>
+<tr><td>عكاوي<span class="es">Akkawi</span></td><td>9</td></tr>
+<tr><td>عش البلبل<span class="es">Ashp Balbul</span></td><td>9</td></tr>
 </table>
-</div></div>
-<div class="sec reveal" id="jc">
-<div class="sh"><h2>عصائر ياسمين الدمام</h2><div class="she">Yasmeen Fresh Juices</div></div>
-<img class="bimg tilt" src="juices_banner.jpg" alt="عصائر ياسمين الدمام" loading="lazy">
-<table class="tbl"><tr><th>اسم الصنف</th><th>وسط</th><th>كبير</th><th>1 لتر</th><th>1.5 لتر</th><th>سعرات حرارية</th></tr>
-<tr><td>فراوله<span class="es" style="font-size:15px;color:#D4A843">Strawberry</span></td><td>6</td><td>8</td><td>15</td><td>22</td><td>43</td></tr>
-<tr><td>عصير روقان<span class="es" style="font-size:15px;color:#D4A843">Rokan Juice</span></td><td>8</td><td>10</td><td>18</td><td>25</td><td>23</td></tr>
-<tr><td>اسبيشل ياسمين الدمام<span class="es" style="font-size:15px;color:#D4A843">Yasmeen Special</span></td><td>10</td><td>12</td><td>20</td><td>25</td><td>40</td></tr>
-<tr><td>برتقال<span class="es" style="font-size:15px;color:#D4A843">Orange</span></td><td>8</td><td>10</td><td>18</td><td>24</td><td>22</td></tr>
-<tr><td>ليمون بالنعناع<span class="es" style="font-size:15px;color:#D4A843">Lemon Mint</span></td><td>6</td><td>8</td><td>15</td><td>22</td><td>21</td></tr>
-<tr><td>مانجو<span class="es" style="font-size:15px;color:#D4A843">Mango</span></td><td>6</td><td>8</td><td>15</td><td>22</td><td>23</td></tr>
-<tr><td>كوكتيل<span class="es" style="font-size:15px;color:#D4A843">Cocktail</span></td><td>6</td><td>8</td><td>15</td><td>22</td><td>63</td></tr>
-<tr><td>موز بالحليب<span class="es" style="font-size:15px;color:#D4A843">Banana Milk</span></td><td>6</td><td>8</td><td>15</td><td>22</td><td>111</td></tr>
-<tr><td>عوار القلب<span class="es" style="font-size:15px;color:#D4A843">Awar Al Qalb</span></td><td>8</td><td>10</td><td>18</td><td>24</td><td>66</td></tr>
-<tr><td>اصفهاني<span class="es" style="font-size:15px;color:#D4A843">Isfahani</span></td><td>8</td><td>10</td><td>18</td><td>24</td><td>40</td></tr>
-<tr><td>رمان<span class="es" style="font-size:15px;color:#D4A843">Pomegranate</span></td><td>6</td><td>8</td><td>15</td><td>22</td><td>40</td></tr>
+</div>
+<div class="sec" id="jc">
+<div class="sh"><h2>عصائر ومشروبات</h2><div class="she">Fresh Juices &amp; Smoothies</div></div>
+<img class="bimg" src="juices_banner.jpg" alt="Juices" loading="lazy">
+<table class="tbl"><tr><th>الصنف</th><th>1 لتر</th><th>1.5 لتر</th><th>كبير</th><th>وسط</th></tr>
+<tr><td>كوكتيل<span class="es">Cocktail</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>طبقات<span class="es">Layered</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
+<tr><td>مانجو<span class="es">Mango</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>فراولة<span class="es">Strawberry</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>جوافة<span class="es">Guava</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>ليمون نعناع<span class="es">Lemon Mint</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>خربز<span class="es">Melon</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>بطيخ<span class="es">Watermelon</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>موز بالحليب<span class="es">Banana Milk</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>موز حليب عسل<span class="es">Banana Honey</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>أناناس<span class="es">Pineapple</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>رمان<span class="es">Pomegranate</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>كيوي<span class="es">Kiwi</span></td><td>15</td><td>22</td><td>8</td><td>6</td></tr>
+<tr><td>عوار القلب<span class="es">Awar al-Qalb</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
+<tr><td>أصفهاني<span class="es">Isfahani</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
+<tr><td>عصير جي<span class="es">Juice J</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
+<tr><td>موهيتو<span class="es">Mojito</span></td><td>-</td><td>-</td><td>12</td><td>10</td></tr>
+<tr><td>أفوكادو<span class="es">Avocado</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
+<tr><td>برتقال<span class="es">Orange</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
+<tr><td>سبيشل ياسمين<span class="es">Yasmeen Special</span></td><td>20</td><td>25</td><td>12</td><td>10</td></tr>
+<tr><td>فيتامين C<span class="es">Vitamin C</span></td><td>18</td><td>25</td><td>10</td><td>8</td></tr>
+<tr><td>عصير روقان<span class="es">Rawqan</span></td><td>18</td><td>25</td><td>10</td><td>8</td></tr>
+<tr><td>عرايسي<span class="es">Arayisi</span></td><td>18</td><td>24</td><td>10</td><td>8</td></tr>
+<tr><td>عرايسي ملكي<span class="es">Arayisi King</span></td><td>18</td><td>25</td><td>15</td><td>12</td></tr>
+<tr><td>سلطة فواكة كاسة<span class="es">Fruit Salad Cup</span></td><td>-</td><td>-</td><td>10</td><td>8</td></tr>
+<tr><td>سلطة فواكة صحن<span class="es">Fruit Salad Plate</span></td><td>-</td><td>-</td><td>-</td><td>10</td></tr>
+<tr><td>ميلك شيك أوريو لوتس<span class="es">Oreo Lotus Shake</span></td><td>18</td><td>25</td><td>10</td><td>8</td></tr>
 </table>
-</div></div>
+</div>
+<div class="sec" id="br" data-title="Broasted Chicken">
+<div class="sh"><h2>بروستد الدجاج</h2><div class="she">Broasted Chicken</div></div>
+<img class="bimg" src="broasted_chicken.jpg" alt="بروستد الدجاج" loading="lazy">
+<table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr>
+<tr><td>بروستد ناعم<span class="es">Broasted Normal</span></td><td>18</td></tr>
+<tr><td>بروستد حار<span class="es">Broasted Spicy</span></td><td>18</td></tr>
+</table>
+</div>
+<div class="sec" id="ex" data-title="Extras">
+<div class="sh"><h2>إضافات</h2><div class="she">Extras</div></div>
+<table class="tbl"><tr><th>الصنف</th><th>السعر</th></tr>
+<tr><td>قطعة جبن شيدر<span class="es">Cheddar Cheese</span></td><td>1</td></tr>
+<tr><td>جبن موزاريلا<span class="es">Mozzarella</span></td><td>3</td></tr>
+<tr><td>أي علبة صوص<span class="es">Sauce Pack</span></td><td>2</td></tr>
+</table>
+</div>
 <div class="ft">
 <div class="ql">📱 قم بمسح الكود لعرض القائمة</div>
-<img class="qr" src="data:image/png;base64,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AEBaepmQE1sW/27Yst94w5a7+d492nKc597bF32PtwIAkCYFACBNCgBAmhQAgDQpAABpUgAA0qQAAKRJAQBIkwIAkCYFACBNCgBAmhQAgDQpAABplgn5L26sip2bXVS7YctG3Oz/fM+WqzR7nLOrjLO/dbO8FQCANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEhLLxO+ty51w42rdGMBzILiidnruWX57fw4t5zRrPeeuvfuu7cCAJAmBQAgTQoAQJoUAIA0KQAAaVIAANKkAACkSQEASJMCAJAmBQAgTQoAQJoUAIA0KQAAaQ8uE55vRvG7tlz5Lcd5w5adtPds2ce78envfePe+x55KwAAaVIAANKkAACkSQEASJMCAJAmBQAgTQoAQJoUAIA0KQAAaVIAANKkAACkSQEASJMCAJD2833f9DEAAGO8FQCANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIE0KAECaFACANCkAAGlSAADSpAAApEkBAEiTAgCQJgUAIO3/AOuUh6iGeBBdAAAAAElFTkSuQmCC" alt="QR Code">
+<img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AQMAAADxGE3JAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACaUlEQVR4nO3cQXKDMAyFYTFZdNkjcBSOBkfjKByBJYtOXCxZxoa0012H+H+LThPrIzuNZUhECPnPDKHMpu91IYjEl5MWLPvfT118VMVhxuPxN/ezeD605Mu8yJjKlmoxZ8Tj8XjptWzVkhzvPtH3+2JMungMHo9/P//w5fh3SsvLvv/Y8Hg8/ncfi57WgcbcgSwbHo9/P+/x/vH07jFqqe0//jy/4PH4dnyZ4vzC/LwXlL4KHo+/t78mTyBS9A+7+J+Cx+Nb8UPwxBZjqfYfs55fxHzsrSkON7k94fH49/BrfURZFkRdPj+RjzdmPB6Pr0ry8xOSlhcp07k/CvB4fJve0utVNt3B6BFnPb/4xYvhxtsTHo+/v1+1JOiIUmTWRX9+Qnx+ORoMHo9v2/epxWx6xKExPYmk+yfenGKq+QWPx9/XD/mAs9pieIlnTR916R94PL5d7ycYa+o/KVKlDyE3p3R+ccwveDz+rj7qRSRNH6dHrKbi9ojlRf/B4/Ht+lnbi+lifom7j0mOG6xHnr484/H423uP7T6qr2hYlmKxc2/B4/Ftezu/sCt8+fnF8fxmnF+OL5eG8/yCx+Nb9hY//0w5fF/0nxDy4+HhtH/B4/F38+c8vMDfGLKzi3f5NR6Pb9wfy1aSNxgxo765pAOS0+/XnC+Px+Pv52f/V/z3L7vr8rE5udw/xePxLXtrLz/8RM2gHejF/ILH49/RF/PHkIw/P5Hay6v7r3g8Hl/ML+4XKftPypQK8Hj8nb3n4kfdfyzFoj3BHX6eX/B4fEu+TLH/sMSL92kp/7hVjH8EHo9v1xPyf/kGYtAYM3apYTMAAAAASUVORK5CYII=" alt="QR Code">
 <div class="qs">https://rdstudiohub.github.io/Yasmeen-Al-Dammam/</div>
 <div class="fdv"></div>
 <div class="ql" style="font-size:10px">مطعم ياسمين الدمام © 2024</div>
 </div>
 <script>
 (function(){
-  // ── Tab Switching ──
   var tabs = document.querySelectorAll('.ctab');
   var secs = document.querySelectorAll('.sec');
   tabs.forEach(function(tab){
@@ -285,71 +277,9 @@ img{max-width:100%;height:auto;display:block}
       secs.forEach(function(s){ s.classList.remove('a'); });
       this.classList.add('a');
       var target = document.getElementById(id);
-      if (target) { target.classList.add('a'); }
+      if (target) target.classList.add('a');
     });
   });
-
-  // ── Preloader ──
-  window.addEventListener('load', function(){
-    setTimeout(function(){
-      document.getElementById('preloader').classList.add('hide');
-    }, 800);
-
-    // ── Force hero video to play ──
-    var heroVideo = document.querySelector('.hero-video-wrap video');
-    if (heroVideo) {
-      heroVideo.play().catch(function(){});
-    }
-  });
-
-  // ── Scroll Reveal Animations (Intersection Observer) ──
-  var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur');
-  if (revealEls.length && 'IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    revealEls.forEach(function(el){ observer.observe(el); });
-  } else {
-    revealEls.forEach(function(el){ el.classList.add('show'); });
-  }
-
-  // ── Floating Particles ──
-  var container = document.getElementById('particles');
-  if (container) {
-    for (var i = 0; i < 15; i++) {
-      var p = document.createElement('div');
-      p.className = 'p';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
-      p.style.animationDuration = (Math.random() * 10 + 8) + 's';
-      p.style.animationDelay = (Math.random() * 10) + 's';
-      container.appendChild(p);
-    }
-  }
-
-  // ── 3D Tilt on Touch Devices ──
-  var tiltEls = document.querySelectorAll('.tilt');
-  tiltEls.forEach(function(el){
-    el.addEventListener('mousemove', function(e){
-      var rect = el.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var cx = rect.width / 2;
-      var cy = rect.height / 2;
-      var dx = (x - cx) / cx * 5;
-      var dy = (y - cy) / cy * -5;
-      el.style.transform = 'perspective(800px) rotateX(' + dy + 'deg) rotateY(' + dx + 'deg) scale(1.02)';
-    });
-    el.addEventListener('mouseleave', function(){
-      el.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
-    });
-  });
-
 })();
 </script>
 </div>

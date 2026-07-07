@@ -350,7 +350,7 @@ for row in juices:
 html += '</table>\n</div>\n'
 
 # 7. Broasted
-html += section('br', 'بروستد الدجاج', 'Broasted Chicken', 'broasted_chicken.jpg',
+html += section('br', 'سبايسي أند مور', 'Spicy & More', 'spicy_broasted.jpg',
     ['الصنف', 'السعر'], broasted)
 
 # 8. Extras
